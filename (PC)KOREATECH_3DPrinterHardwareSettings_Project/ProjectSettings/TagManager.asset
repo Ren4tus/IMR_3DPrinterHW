@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Cover
+  - Cabinet
+  - PrinterBlock
+  - PrinterHead
+  - ModelMaterial
+  - SupportMaterial
+  - WaterJet
+  - WasteBottle
+  - Wiper
+  - BuildTray
+  - UV
+  - Vaccum
+  - Pump
+  - CabinetDoor
+  - SubTitleMaterial
+  - SubTitlePrinting
+  - SubTitleMechanism
+  - SubTitleStructure
+  - UVS
+  - ScriptBoxDownBtn
+  - Sequence
+  - PBF_PowderBag
+  - PBF_AllProps
+  - PBF_GUI_RecoaterBtn
+  - PBF_AnimationController
+  - PBF_OutDoor
+  - PBF_InDoor
+  - PBF_ChamberLightBtn
+  - PBF_ChamberLight
+  - PBF_USBPort
+  - PBF_USB
+  - PBF_GUI_SlicerExcute
+  - PBF_GUI_ModelImportBtn
+  - PBF_GUI_SP_ModelImportBtn
+  - PBF_GUI_ToggleEX1
+  - PBF_GUI_ToggleEX2
+  - PBF_GUI_StatusBtn
+  - PBF_MQC_ShifterBtn
+  - PBF_SB_PowerSwitch
+  - PBF_MQC_GlassRoom
+  - PBF_MQC_GlassDoor
+  - PBF_SB_Cover
+  - PBF_SB_Platform
+  - PBF_DC_Room
+  - PBF_ToolTable
+  - PBF_UI_HoverTip
+  - PBF_GUI_Slicer_Move
+  - PBF_GUI_Slicer_Rotate
+  - PBF_GUI_Slicer_View
+  - PBF_GUI_Slicer_Internal
+  - PBF_GUI_Slicer_Check
+  - PBF_GUI_Slicer_Estimate
+  - PBF_GUI_Slicer_Printing
+  - PBF_GUI_Slicer_ModelImport
+  - PBF_Recoater
+  - PBF_GUI_FastFoward
+  - PBF_IRHeaters
+  - PBF_LaserWindow
+  - PBF_GUI_PartExtract
+  - PBF_Cart_Plate
+  - PBF_VaccumCleaner
+  - PBF_ScanMirror
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - SeletableObject
+  - PopUp
+  - DragGuide
+  - AfterLoading
+  - View
+  - SFX
+  - Slicer
+  - GUI
+  - 
+  - 
+  - 
+  - 
+  - Background
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Object
+    uniqueID: 1705806917
+    locked: 0
+  - name: PopUp
+    uniqueID: 950658355
+    locked: 0
