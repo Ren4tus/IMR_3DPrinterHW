@@ -2,6 +2,19 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+/[Aa]ssets/01_Scenes/
+/[Aa]ssets/03_Animation/
+/[Aa]ssets/05_Materials/
+/[Aa]ssets/06_Fonts/
+/[Aa]ssets/07_Textures/
+/[Aa]ssets/ImportAssets/
+/[Aa]ssets/LoginAPI/
+/[Aa]ssets/Models/
+/[Aa]ssets/Moedels/
+/[Aa]ssets/NotUsed(Deleted)/
+/[Aa]ssets/Resources/
+/[Aa]ssets/StreamingAssets/
+/[Aa]ssets/WebGLTemplates/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
