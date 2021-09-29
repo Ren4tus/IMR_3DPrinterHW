@@ -1,0 +1,117 @@
+05. 조형물 회수|05. Reclaim sculptures
+19
+0|이제 조형물을 회수해보겠습니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|Now we will retrieve the sculpture.
+1|방진마스크를 착용합니다.|Wear dustproof masks and nitrile gloves.
+2|니트릴장갑을 착용합니다.|Wear dustproof masks and nitrile gloves.
+3|외부 잠금 도어를 엽니다.|Open the exterior locking door.
+4|내부 챔버 도어를 엽니다.|Open the inner chamber door.
+5|챔버 라이트를 켭니다.|Turn on the Chamber Light.
+6|양쪽 히터를 들어올립니다.|Lift both heaters.
+7|파트 추출 실린더를 챔버에 삽입합니다.|Insert the part extraction cylinder into the chamber.
+8|내부 챔버 도어 및 외부 잠금 도어를 닫습니다.|Close the inner chamber door and the outer locking door.
+9|프린터 UI의 '파트 추출' 버튼을 터치합니다. |Click the 'Part Extract' button in the printer UI.
+10|외부 잠금 도어 및 내부 챔버 도어를 엽니다.|Open the exterior locking door and the interior chamber door.
+11|파트 이동 카트를 챔버에 맞추어 정렬합니다.|Align the part movement cart with the chamber entrance.
+12|파트 이동 트레이를 파트 추출 실린더 밑으로 밀어넣은 뒤 핀을 체결합니다.|Slide the part movement tray under the part extraction cylinder and tighten the pin.
+13|실린더와 트레이를 챔버에서 빼내 카트로 이동합니다.|Remove the cylinder and tray from the chamber and move them to the cart.
+14|카트를 재료공급장치로 이동합니다.|Move the cart to the MQC.
+15|챔버 상단에 있는 레이저 윈도우를 탈거합니다.|Remove the laser window at the top of the chamber.
+16|작업테이블의 천 위에 레이저 윈도우를 올려놓고 티슈로 덮어 놓습니다.|Place the laser window on the fabric on the tool table and cover it with a tissue.
+17|남은 분말이 달라붙는 것을 막기 위해, 배플플러그를 레이저 윈도우 자리에 삽입합니다.|To prevent the remaining powder from sticking, insert the baffle plug into the laser window position.
+18|조형물 회수를 완료했습니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|Reclaiming sculptures has been completed.
+Typing 0 False
+AnimationPlay PBF_Extraction Init
+Typing 1 True
+CameraTransform -1.65 1.6 -0.25 76.6 0.55 0.54 3 3 True
+WaitForClickObject PBFProp_DustproofMask
+CallMethod EquipController Equip_DustproofMask Equip_DustproofMask
+Typing 2 True
+WaitForClickObject PBFProp_NitrilGloves
+CallMethod EquipController Equip_NitrilGloves Equip_NitrilGloves
+CameraTransform -3.5 1.7 2 5 0 0 3 3 True
+Typing 3 True
+WaitForClickObject OutDoor
+AnimationPlay OutDoor Open
+Delay 1
+Typing 4 True
+WaitForClickObject InDoor
+AnimationPlay InDoor Open
+Delay 2
+Typing 5 True
+CameraTransform -2.96 1.54 2.9 21.3 1.9 0 3 3 True
+WaitForClickObject chamber_lights_button
+AnimationPlay ChamberLight On
+CameraTransform -3.5 1.85 3.1 29.5 0.2 0 3 3 True
+Typing 6 True
+WaitForClickObject IR_Heater
+AnimationPlay IR_Heater Up
+Typing 7 True
+CameraTransform -1.22 1.85 2.65 26.3 -1.1 0.12 3 3 True
+WaitForClickObject PBF_Extraction_Cylinder
+AnimationPlay PBF_Extraction CylinderEquip
+CallMethod EquipController Equip_Extraction_Cylinder Equip_Extraction_Cylinder
+CameraTransform -3.5 1.7 2 5 0 0 3 3 True
+WaitForClickObject Tray
+CallMethod EquipController Equip_Extraction_Cylinder Equip_Extraction_Cylinder
+AnimationPlay PBF_Extraction PutCylinderIntoChamber
+Delay 1
+Typing 8 True
+WaitForClickObject InDoor
+AnimationPlay InDoor Close
+Delay 2
+WaitForClickObject OutDoor
+AnimationPlay OutDoor Close
+Delay 1
+Typing 9 True
+CameraTransform -2.9 1.6 3 1.6 0.1 0 3 3 True
+CallMethod UIController ActivePartExtractBtn InactivePartExtractBtn
+WaitForClickObject BtnPartExtract
+AnimationPlay PBF_Extraction Extract
+AnimationPlay Recoater Extract
+Typing 10 True
+CameraTransform -3.5 1.7 2 5 0 0 3 3 True
+WaitForClickObject OutDoor
+AnimationPlay OutDoor Open
+Delay 1
+WaitForClickObject InDoor
+AnimationPlay InDoor Open
+Delay 2
+Typing 11 True
+CameraTransform -1.21 2.1 2.4 36.2 -1 0 3 3 True
+WaitForClickObject PBF_Cart
+CameraTransform -3.36 3 0.9 37.8 0 0 2 2 True
+AnimationPlay PBF_Extraction CartMoveToPrinter
+Delay 3
+Typing 12 True
+CameraTransform -3.5 1.7 2 20 0 0 3 3 True
+WaitForClickObject PBF_Extraction_Tray
+AnimationPlay PBF_Extraction TrayInChamber
+Delay 2
+Typing 13 True
+WaitForClickObject PBF_Extraction_Tray
+AnimationPlay PBF_Extraction RemoveFromChamber
+Delay 2
+Typing 14 True
+CameraTransform -3.5 1.7 2 30 0 0 3 3 True
+WaitForClickObject PBF_Cart
+AnimationPlay PBF_Extraction MoveToMQC
+CameraTransform -4.4 3.4 0.3 35.7 42 0 3 3 True
+Delay 2
+Typing 15 True
+CameraTransform -3.52 1.85 3.2 13.7 1 0.16 3 3 True
+WaitForClickObject ScanMirror
+AnimationPlay LaserWindow Remove
+Delay 1.5
+Typing 16 True
+CameraTransform -1 1.44 0.65 50 180 0 2 2 True
+WaitForClickObject PBFProp_Fabric
+AnimationPlay LaserWindow PutOnTable
+WaitForClickObject PBFProp_Tissu
+AnimationPlay PBFProp_Tissu PutOnLaserWindow
+Typing 17 True
+CameraTransform -1.78 1.61 1.49 30 -166.6 0.14 3 3 True
+WaitForClickObject PBF_BafflePlug
+CameraTransform -3.54 1.7 3.2 -7 1 0.16 2 2 True
+AnimationPlay PBF_BafflePlug InsertChamber
+Delay 1.5
+Typing 18 False

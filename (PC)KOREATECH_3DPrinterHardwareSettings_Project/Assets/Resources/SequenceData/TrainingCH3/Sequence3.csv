@@ -1,0 +1,66 @@
+03. 슬라이싱|03. Slicing
+12
+0|다음으로, 프린팅을 진행하기 위해 데이터를 슬라이싱해보겠습니다.<n>슬라이싱이란, 3D 모델링 파일을 프린터가 프린팅에 사용할 수 있는 데이터로 변환하는 작업을 말합니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|Next, we will slice the data to proceed with printing.<n>Slicing refers to converting a 3D modeling file into data that can be used for printing by a printer.
+1|프린터 USB포트에 USB를 삽입합니다.|Insert the USB into the printer USB port.
+2|프린터 인터페이스 상단의 '슬라이서 실행' 버튼을 클릭합니다.|Click the 'Run Slicer' button at the top of the printer screen.
+3|슬라이서에서 '모델 불러오기' 버튼을 클릭합니다.|Click the 'Import Model' button on the slicer.
+4|복수 배치를 위해 모든 모델을 선택한 뒤, 불러오기 버튼을 눌러주세요.|Let's select all models and try to deploy them.
+5|[이동] 버튼을 클릭한 다음 모델을 클릭하면 모델을 자유롭게 이동할 수 있습니다.|Click the [Move] button and click Model to move the model freely.
+6|[회전] 버튼을 클릭한 다음 모델을 클릭하면 모델을 회전시킬 수 있습니다.|You can rotate the model by clicking the [Rotate] button and then clicking Model.
+7|[모델뷰] 버튼을 클릭하여 배치 상태를 확인할 수 있습니다.<n>[등각], [평면], [측면], [정면] 총 4개의 시점에서 배치 상태를 확인할 수 있습니다.|Click the [Model View] button to view the placement status.<n>There are a total of four points of view: [Isometric], [Top], [Side], and [Front].
+8|이제 [이동], [회전], [모델뷰] 기능을 이용해서 모델을 반투명한 트레이 범위 내에 배치한 뒤,<n>[배치오류 확인] 버튼을 클릭하여 배치가 올바르게 되었는지 확인해보세요.<n>배치가 올바르게 되지 않았을 때는 모델이 붉게 표시되고, 올바르게 되었을 때는 초록색으로 표시됩니다.|Now let's use the [Move], [Rotation], and [Model View] functions to place the model within the tray range.<n> click the [Collocate Check] button to see if the layout is correct.<n>The model color is red when the position is not correct, and green when it is correct.
+9|모든 모델이 올바르게 배치되었습니다.<n>이제 [프린팅시간 계산] 버튼을 클릭하여 예상 프린팅 시간을 계산해보겠습니다.|Click the [Estimate Time] button to calculate the printing time.
+10|마지막으로 [프린팅] 버튼을 클릭하여 프린팅을 지시합니다.|Finally, click the [Print] button to instruct printing.
+11|슬라이싱이 완료되었습니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|Slicing is complete.
+Typing 0 False
+CameraTransform -2.9 1.5 3 15 0.1 0 2 2 False
+Typing 1 True
+BlockingNext
+WaitForClickObject monitor_usb
+AnimationPlay PBF_USB InsertToPrinter
+Delay 1
+BlockingRelease
+CameraTransform -2.9 1.6 3 0 0 0 3 3 False
+Typing 2 True
+BlockingNext
+CallMethod UIController ActiveSlicerBtn InactiveSlicerBtn
+WaitForClickObject BtnSlicerExecute
+CallMethod UIController SlicerOpen SlicerClose
+BlockingRelease
+Typing 3 True
+BlockingNext
+CallMethod UIController ActiveLoadModelBtn InactiveLoadModelBtn
+WaitForClickObject BtnModelImport
+CallMethod UIController SlicerPopupOpen SlicerPopupClose
+Typing 4 False
+CallMethod UIController ModelImport ModelImportUndo
+BlockingRelease
+CallMethod UIController ActiveSlicerMoveBtn InactiveSlicerMoveBtn
+Typing 5 False
+CallMethod UIController ExitEditMode ExitEditMode
+CallMethod UIController ActiveSlicerRotateBtn InactiveSlicerRotateBtn
+Typing 6 False
+CallMethod UIController ExitEditMode ExitEditMode
+CallMethod UIController ActiveSlicerViewBtn InactiveSlicerViewBtn
+Typing 7 False
+CallMethod UIController ExitEditMode ExitEditMode
+Typing 8 False
+CallMethod UIController ActiveSlicerCheckBtn InactiveSlicerCheckBtn
+BlockingNext
+End
+CallMethod UIController CheckSlicingComplte SlicingStatusInit
+BlockingRelease
+Typing 9 True
+BlockingNext
+CallMethod UIController ActiveSlicerEstimateBtn InactiveSlicerEstimateBtn
+WaitForClickObject BtnEstimateTime
+BlockingRelease
+Typing 10 True
+BlockingNext
+CallMethod UIController ActiveSlicerPrintingBtn InactiveSlicerPrintingBtn
+WaitForClickObject BtnPrinting
+BlockingRelease
+Typing 11 False
+CallMethod UIController SlicerClose SlicerOpen
+CallMethod UIController PrintingStatusOpen PrintingStatusClose
+CallMethod UIController SetStatusWarmingUp SetStatusWarmingUp

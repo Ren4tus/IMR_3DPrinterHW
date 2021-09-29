@@ -422,15 +422,14 @@ public class LoginNetworkManager : LoginNetworkSingleton<LoginNetworkManager>
 		m_IsCheckLoginState = true;
 		CheckLoginStatus();
 
+
+		//imrlab 09-28
+		//로그인 성공 시 xapi 전송
+
 		LoginSceneControl loginSceneControl = GameObject.Find("LoginSceneControl").GetComponent<LoginSceneControl>();
-		//xAPISender.instance.UserID = loginSceneControl.m_Id.text;
-		Newtonsoft.Json.Linq.JObject extension = new Newtonsoft.Json.Linq.JObject();
-		Newtonsoft.Json.Linq.JObject sources = new Newtonsoft.Json.Linq.JObject();
-		sources.Add("id", loginSceneControl.m_Id.text);
-		extension.Add("https://www.koreatech.ac.kr/extension/loginInfo", sources);
-		xAPISender.instance.NowLesson = "login_page";
-		xAPISender.instance.SendIMRStatement("login", "Client", extension);
-		Debug.Log("Login Success");
+
+		xAPISender.instance.SendLoginMessageStatement(loginSceneControl.m_Id.text);
+
 		SceneManager.LoadScene(m_NextSceneLevel);
 	}
 

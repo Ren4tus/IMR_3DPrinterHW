@@ -1,0 +1,47 @@
+06. 조형물 해체|06. Sculpture Dismantling
+7
+0|이제 케이크 상태의 조형물을 해체해 보겠습니다.<n>실린더가 결합된 트레이를 재료공급장치의 케이크 해체 영역으로 옮깁니다.|No Translation
+1|이동 트레이와 파트 추출 실린더를 제거합니다.|No Translation
+2|조심스럽게 케이크를 해체하여, 조형물을 분리해냅니다. |No Translation
+3|분리한 조형물은 테이블에 올려놓습니다.|No Translation
+4|재료 공급 장치의 커버를 닫습니다.|No Translation
+5|시프터를 가동하여 케이크에서 분리된 파우더를 흡입합니다.|No Translation
+6|조형물을 집습니다.|No Translation
+Typing 0 True
+CameraTransform 0.736 2.64 1.38 32.65 0.53 0 3 3 True
+WaitForClickObject PBF_Extraction_Tray
+CameraTransform 1.21 1.91 1.89 20 0 0 3 3 True
+WaitForClickObject MQC_Glass_Room
+AnimationPlay PBF_Extraction CylinderMoveToMQC
+Delay 1
+Typing 1 True
+WaitForClickObject PBF_Extraction_Cylinder
+AnimationPlay PBF_Extraction CylinderRemoveMQC
+Delay 3.5
+Typing 2 True
+WaitForClickObject Powder_Cake
+AnimationPlay PBF_Extraction BreakCake
+Delay 2
+Typing 3 True
+WaitForClickObject PrintedSculptures
+AnimationPlay PBF_Extraction TakeSculpture
+CameraTransform -1.11 1.64 1.54 43.83 -160.9 0.1 2 2 True
+WaitForClickObject PBF_Table1
+AnimationPlay PBF_Extraction SculpturePutOnTable
+Delay 1
+CameraTransform 0.51 2.25 1.58 20.6 0.11 0.21 3 3 True
+End
+Typing 4 True
+WaitForClickObject MQC_GlassDoor
+AnimationPlay MQC_GlassDoor Close
+Delay 2
+Typing 5 True
+CameraTransform 1 1.52 3.25 29.5 -52.4 0.2 3 3 True
+WaitForClickObject MQC_button_sifter_handle
+AnimationPlay PBF_Extraction ShifterOn
+CameraTransform 0.51 2.25 1.58 20.6 0.11 0.21 3 3 True
+Delay 2
+End
+Typing 6 True
+CameraTransform -1.11 1.64 1.54 43.83 -160.9 0.1 2 2 True
+WaitForClickObject PrintedSculptures

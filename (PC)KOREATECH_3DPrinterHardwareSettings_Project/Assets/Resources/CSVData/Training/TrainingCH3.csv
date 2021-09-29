@@ -1,0 +1,38 @@
+INDEX|KR|EN
+0|분말적층용융결합 프린터 실습|POWDER BED FUSION PRINTER PRACTICE
+11|산소농도|Oxygen Concentration
+12|질소발생기|Nitrogen Generator
+13|IR히터온도|IR Heater Temperature
+14|챔버온도|Chamber Temperature
+15|재료량|Material Remaining
+16|슬라이서|Slicer
+17|모델 불러오기|Import Model
+18|EX1.STL(10시간)|EX1.STL(10 hr)
+19|EX2.STL(15시간)|EX2.STL(15 hr)
+20|불러오기|Import
+21|현재 프린터 상태|Current Status
+22|진행상황|Progress
+23|소요 시간|Elapsed Time
+24|높이|Current Stage Z
+25|총 레이어|Total Stage Z
+26|프린팅 상태|Printing Status
+101|모델뷰 : 등각|Model View : Isometric
+102|모델뷰 : 평면|Model View : Top
+103|모델뷰 : 측면|Model View : Side
+104|모델뷰 : 정면|Model View : Front
+200|[EX1.STL], [EX2.STL]<n>모델을 불러오시겠습니까?|Load [EX1.STL], [EX2.STL]?
+201|모든 모델을 선택해야 합니다.|All models must be selected.
+202|예상 프린팅 시간 |Estimated Printing Time
+301|프린터 상태보기|Printer Status
+302|리코터 원점복귀|Recoater Origin
+303|슬라이서 실행|Run Slicer
+304|파트 추출|Part Extraction
+305|빨리감기|Quick Forward
+306|모델 불러오기|Import Model
+307|이동|Move
+308|회전|Rotate
+309|모델뷰 : 등각|View : Isometric
+310|배치오류 확인|Collocate Check
+311|프린팅시간 계산|Estimate Time
+312|프린팅|Print
+313|편집모드 종료|Exit Edit Mode

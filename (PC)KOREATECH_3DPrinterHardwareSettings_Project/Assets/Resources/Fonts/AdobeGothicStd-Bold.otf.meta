@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 56aef4d147af2ba46afa539f9a5655a8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Adobe Gothic Std
+  fontNames:
+  - Adobe Gothic Std
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 253c6fe3396ee8f469c7e704c369a6b3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

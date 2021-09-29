@@ -1,0 +1,45 @@
+10. 재료 보충|10. Material Supplement
+9
+0|마지막으로 재료를 보충해보겠습니다.|No Translation
+1|먼저 프린터의 재료량을 확인합니다. 재료량은 프린터 상태창에서 확인하실 수 있습니다.<n>프린터 인터페이스에서 '프린터 상태보기' 버튼을 클릭합니다.|No Translation
+2|프린터 상태창에 재료가 부족하다고 나와있습니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|No Translation
+3|작업테이블에서 재료가 든 파우더백을 집습니다.|No Translation
+4|새 재료를 재료공급장치의 태그 리더기에 인식합니다.|No Translation
+5|재료를 재료 보관함에 투입합니다.|No Translation
+6|재료 상태가 업데이트되었는지 확인합니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|No Translation
+7|재료 보충이 완료되었습니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|No Translation
+8|분말적층용융결합 3D프린터 실습을 완료하였습니다. 수고하셨습니다.|No Translation
+Typing 0 True
+CameraTransform -2.9 1.6 3 0 0 0 3 3 True
+Typing 1 True
+BlockingNext
+WaitForClickObject BtnStatus
+CallMethod UIController StatusOpen StatusClose
+BlockingRelease
+Typing 2 False
+CameraTransform -1.81 1.46 0.45 75 180 0 3 3 True
+Typing 3 True
+WaitForClickObject PBF_PowderBag
+Typing 4 True
+CameraTransform 0.11 2 1.8 30 0 0 2 2 True
+WaitForClickObject TagReader
+Typing 5 True
+CameraTransform 0 2 2.82 40 0 0 3 3 True
+BlockingNext
+WaitForClickObject MQC_MaterialDoor_L
+AnimationPlay MQC_MaterialDoor OpenL
+Delay 1
+WaitForClickObject MQC_MaterialDoor_R
+AnimationPlay MQC_MaterialDoor OpenR
+Delay 1
+WaitForClickObject MQC_Material_Cabinet
+AnimationPlay PBF_PowderBag InsertToMQC
+Delay 1
+AnimationPlay MQC_MaterialDoor Close
+CallMethod UIController StatusChangepFullMaterial StatusChangeNeedMaterial
+Delay 1
+BlockingRelease
+Typing 6 True
+CameraTransform -2.9 1.6 3 0 0 0 3 3 False
+Typing 7 False
+Typing 8 False

@@ -1,0 +1,53 @@
+0|1-99 퀵메뉴 전용|No Translation
+1|프로그램 종료|Exit Program
+2|환경설정|Preferences
+3|도움말|Help
+4|전체 목차|All Menu
+5|메인 화면으로|Return To Home
+100|100-전체메뉴|No Translation
+101|전체메뉴|All Menu
+102|재료분사프린터|Material Jetting 3D Printer
+103|광중합프린터|Photopolymerization 3D Printer
+104|분말적층용융결합프린터|Powder Bed Fusion 3D Printer
+105|지식|Theory
+106|실습|Practice
+107|실습평가|Evaluation
+400|환경설정|Preferences
+401|소리설정|Sound 
+402|그래픽 설정|Graphic
+403|기타 설정|ETC
+404|전체음량|Master
+405|효과음|Effect
+406|장비음|Gear
+407|나레이션|Narration
+408|전체화면모드|Full Screen
+409|그래픽 품질|Quality
+410|해상도|Resolution
+411|튜토리얼 보기|Show Tutorial
+412|언어 설정|Language
+413|사용|Use
+414|켜기|Off
+415|자동|Auto
+416|낮음|Low
+417|보통|Midium
+418|높음|High
+500|500~팝업메세지|No Translation
+501|콘텐츠를 종료할까요?|Are you sure you want to exit the program?
+502|처음 화면으로 이동할까요?|Are you sure you want to return home?
+510|<color=#f79647>[재료분사프린터 지식]</color><n>화면으로 이동할까요?|Do you want to go<n><color=#f79647>[Material Jetting 3D Printer Theory]?</color>
+511|<color=#f79647>[재료분사프린터 실습]</color><n>화면으로 이동할까요?|Do you want to go<n><color=#f79647>[Material Jetting 3D Printer Practice]?</color>
+512|<color=#f79647>[재료분사프린터 실습평가]</color><n>화면으로 이동할까요?|Do you want to go<n><color=#f79647>[Material Jetting 3D Printer Evaluation]?</color>
+513|<color=#f79647>[광중합프린터 지식]</color><n>화면으로 이동할까요?|Do you want to go<n><color=#f79647>[Photopolymerization 3D Printer Theory]?</color>
+514|<color=#f79647>[광중합프린터 실습]</color><n>화면으로 이동할까요?|Do you want to go<n><color=#f79647>[Photopolymerization 3D Printer Practice]?</color>
+515|<color=#f79647>[광중합프린터 실습평가]</color><n>화면으로 이동할까요?|Do you want to go<n><color=#f79647>[Photopolymerization 3D Printer Evaluation]?</color>
+516|<color=#f79647>[분말적층용융결합프린터 지식]</color><n>화면으로 이동할까요?|Do you want to go<n><color=#f79647>[Powder Bed Fusion 3D Printer Theory]?</color>
+517|<color=#f79647>[분말적층용융결합프린터 실습]</color><n>화면으로 이동할까요?|Do you want to go<n><color=#f79647>[Powder Bed Fusion 3D Printer Practice]?</color>
+518|<color=#f79647>[분말적층용융결합프린터 실습평가]</color><n>화면으로 이동할까요?|Do you want to go<n><color=#f79647>[Powder Bed Fusion 3D Printer Evaluation]?</color>
+600|600~팝업UI|No Translation
+601|알림|Notice
+602|주의|Caution
+603|경고|Warning
+604|확인|OK
+605|예|Yes
+606|아니오|No
+700|700~슬라이서|No Translation

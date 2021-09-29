@@ -1,0 +1,56 @@
+07. 조형물 후처리|07. Post-processing of Sculptures
+9
+0|조형물을 후처리 해보겠습니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|No Translation
+1|샌드블라스터 측면커버를 개방하고 조형물을 투입한 뒤, 커버를 닫습니다.|No Translation
+2|샌드블라스터의 전원을 켭니다.|No Translation
+3|분사노즐을 잡고 조형물에 분사합니다.|No Translation
+4|커버를 개방하여 조형물을 회수합니다.|No Translation
+5|조형물을 집진기로 이동합니다.|No Translation
+6|조형물에 압축공기를 분사합니다.|No Translation
+7|브러쉬를 이용하여 조형물의 잔여물을 털어냅니다.|No Translation
+8|완성된 조형물을 작업테이블에 올려놓습니다. |No Translation
+Typing 0 True
+CameraTransform 3.3 1.8 2.77 24 -0.8 0 3 3 False
+Typing 1 True
+CameraTransform 4.2 1.6 3.7 35 -71 0 3 3 True
+WaitForClickObject SandBlaster_Door
+AnimationPlay SandBlaster_Door Open
+WaitForClickObject SandBlaster_Room
+AnimationPlay PBF_Extraction PutInSandBlaster
+WaitForClickObject SandBlaster_Door
+AnimationPlay SandBlaster_Door Close
+Delay 1
+Typing 2 True
+CameraTransform 4.1 1.87 3.96 31 -84 0 3 3 True
+WaitForClickObject SandBlaster_PowerSwitch
+AnimationPlay SandBlaster_PowerSwitch On
+Delay 1
+CameraTransform 3.3 1.8 2.77 24 -0.8 0 3 3 True
+Typing 3 True
+CameraTransform 3.2 1.35 3.77 64 1 0.74 2 2 True
+WaitForClickObject SandBlaster_Nozzle
+AnimationPlay SandBlaster_Nozzle Move
+Delay 3.5
+Typing 4 True
+CameraTransform 4.2 1.6 3.7 35 -71 0 2 2 True
+WaitForClickObject SandBlaster_Door
+AnimationPlay SandBlaster_Door Open
+WaitForClickObject PrintedSculptures
+AnimationPlay PBF_Extraction TakeSculptureFromSB
+WaitForClickObject SandBlaster_Door
+AnimationPlay SandBlaster_Door Close
+Delay 1
+Typing 5 True
+CameraTransform 4.85 1.8 3.2 45 0 0 3 3 False
+Typing 6 True
+WaitForClickObject DustCollector_Airgun
+AnimationPlay PBF_DustCollector Shoot
+Delay 3
+Typing 7 True
+WaitForClickObject PBF_Brush
+AnimationPlay BrushTools CleanImpeller
+Delay 3
+Typing 8 True
+CameraTransform 0 1.95 0.4 50 -90 0.3 3 3 True
+WaitForClickObject PBF_Table1
+AnimationPlay PBF_Extraction CompleteSculptureOnTable

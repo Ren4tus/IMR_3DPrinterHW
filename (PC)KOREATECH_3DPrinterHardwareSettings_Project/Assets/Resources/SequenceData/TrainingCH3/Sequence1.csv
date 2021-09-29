@@ -1,0 +1,20 @@
+01. 준비|01. Ready
+5
+0|안녕하세요. 분말적층용융결합3D프린터 실습에 오신 것을 환영합니다.|Hello, welcome to the powder bed fusion 3D printer practice course.
+1|지금 보고 계신 것은 정상적으로 프린팅을 마친 뒤, 후처리까지 완료한 조형물입니다.|What you're looking at now is a sculpture that finished printing normally and even finished post-processing.
+2|이번 분말적층용융결합3D프린터 실습은 총 10개 단계로 진행되며,<n>프린터를 설정하고 조작하여 위와 같은 조형물을 완성하는 것을 목표로 합니다.|This practice course consists of a total of 10 steps.<n>The goal is to set up and operate the printer to complete the sculpture that you looking at now.
+3|그럼 이제 작업에 필요한 도구와 장비를 확인해 볼까요?|Then, let's check the tools and equipment we need to work on.
+4|테이블 위 도구에 마우스를 올리시면 자세한 설명을 확인하실 수 있습니다.<n>확인을 마치셨다면 우측 하단의 ‘다음’ 버튼을 눌러 실습을 진행해 주세요.|Test
+UndoPointAutoNext
+CallMethod UIController ActiveSculptureViewer InactiveSculptureViewer
+AnimationPlay SFXCanvas FadeIn
+Typing 0 False
+Typing 1 False
+Typing 2 False
+Typing 3 False
+CallMethod UIController ToolTipOn ToolTipOff
+CallMethod UIController InactiveSculptureViewer ActiveSculptureViewer
+AnimationPlay SFXCanvas FadeOut
+CameraTransform -1.5 1.65 0.16 90 0 0 3 3 True
+Typing 4 False
+UndoPoint

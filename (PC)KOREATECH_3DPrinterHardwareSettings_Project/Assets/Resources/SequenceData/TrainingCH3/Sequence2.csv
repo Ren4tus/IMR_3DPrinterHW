@@ -1,0 +1,28 @@
+02. 프린터 상태 확인|02. Check the printer status
+5
+0|이제 프린터 상태를 확인해보겠습니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|Now let's check the printer status.
+1|프린터 인터페이스에서 '프린터 상태보기' 버튼을 클릭합니다.|Click the 'Printer Status' button on the printer screen.
+2|프린터 상태창에서 산소농도, 질소발생기, IR히터 상태, 챔버 온도와 재료량을 확인합니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|Check the oxygen concentration, nitrogen generator, IR heater temperature,<n>chamber temperature and material remaining in the printer status window.
+3|프린터 상태가 정상인 것을 확인했습니다.<n>프린터 화면 상단의 '리코터 원점복귀' 버튼을 클릭해주세요.|We checked that the printer is in good condition.<n>Click the 'Recoater Move to Origin' button at the top of the printer screen.
+4|리코터가 원점으로 복귀합니다.<n>다음 버튼을 눌러 실습을 진행해 주세요.|The recoater returns to origin.
+CallMethod UIController ToolTipOff ToolTipOn
+Typing 0 False
+CameraTransform -2.9 1.6 3 0 0 0 3 3 False
+Typing 1 True
+BlockingNext
+CallMethod UIController ActivePrinterStatusBtn InactivePrinterStatusBtn
+WaitForClickObject BtnStatus
+BlockingRelease
+CallMethod UIController StatusOpen StatusClose
+Typing 2 False
+Typing 3 True
+BlockingNext
+CallMethod UIController StatusClose StatusOpen
+CallMethod UIController ActiveRecoaterBtn InactiveRecoaterBtn
+WaitForClickObject BtnReacoter
+BlockingRelease
+CameraTransform -3.53 1.56 3.3 27 0.27 0 3 3 True
+Typing 4 True
+AnimationPlay Recoater Origin
+End
+UndoPoint

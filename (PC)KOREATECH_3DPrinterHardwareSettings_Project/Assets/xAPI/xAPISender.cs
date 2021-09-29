@@ -42,6 +42,8 @@ public class xAPISender : MonoBehaviour
     public string NowActivity = "null";
     public string UserID = "null";
 
+    public int hint_count = 0;
+
     EvaluationSceneController evaluationSceneController;
 
     public string EndPoint
@@ -72,12 +74,17 @@ public class xAPISender : MonoBehaviour
     public void Init()
     {
         SetRemoteLRS();
-        send_dict = new Dictionary<string, bool>();
         
         //lrs_res = lrs.SaveStatement(imr_statement.GetStatement());
     }
+    public void setActorName(string actorName)
+    {
+        string[] splitText = actorName.Split('@');
+        actor_name = splitText[0];
+    }
     public void SetLesson(string Lesson)
     {
+        hint_count = 0;
         switch (Lesson)
         {
             case "EvaluationCH1":
@@ -86,33 +93,59 @@ public class xAPISender : MonoBehaviour
                 break;
         }
     }
-    
-    public void SendMessageWithTranslate(int seq, int step, JObject extension = null)
+    public string DecodeSequence(int seq, int step)
     {
-        if(NowLesson == "Material-Jetting")
+        if (NowLesson == "Material-Jetting")
         {
-            if(seq == 0)
+            if (seq == 0)
             {
                 switch (step)
                 {
                     case 0:
-                        SendIMRStatement("performed", "Connect_Computer");
-                        break;
+                        return "Connect_Computer";
                 }
             }
-            else if(seq == 1)
+            else if (seq == 1)
             {
                 switch (step)
                 {
                     case 0:
-                        SendIMRStatement("performed", "Check-PrinterState");
-                        break;
+                        return "Check-PrinterState";
                 }
             }
         }
 
+        return "sequence decode error";
+    }
+    public void SendMessageWithTranslate(int seq, int step, JObject extension = null)
+    {
+        SendIMRStatement("performed", DecodeSequence(seq, step));
 
+    }
+    public void SendLoginMessageStatement(string id)
+    {
+        //xAPISender.instance.UserID = loginSceneControl.m_Id.text;
+        JObject extension = new JObject();
+        JObject sources = new JObject();
+        sources.Add("id", id);
+        extension.Add("https://www.koreatech.ac.kr/extension/loginInfo", sources);
+        NowLesson = "login_page";
+        SendIMRStatement("login", "Client", extension);
+        setActorName(id);
+        Debug.Log("Login Success");
+    }
+    public void SendHintStatement(string currentStepAction)
+    {
+        hint_count++;
+        JObject extension = new JObject();
+        JObject hintcount = new JObject();
+        hintcount.Add("hint-count", hint_count);
+        extension.Add("https://www.koreatech.ac.kr/extension/hint", hintcount);
+        JObject evealutionStep = new JObject();
+        evealutionStep.Add("evaluation-step", currentStepAction);
+        extension.Add("https://www.koreatech.ac.kr/extension/evaluation-step", evealutionStep);
 
+        SendIMRStatement("performed", "hint", extension);
     }
     public void SendIMRStatement(string verb, string activity, JObject extension = null)
     {

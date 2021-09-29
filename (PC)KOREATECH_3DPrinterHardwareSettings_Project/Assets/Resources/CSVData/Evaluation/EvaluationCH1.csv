@@ -1,0 +1,206 @@
+INDEX,KR,EN
+0,가,a
+1,1. 준비,1. Preparation
+2,2. 컴퓨터와 프린터 연결,2. Computer and printer connection
+3,현재 착용한 장비,Equipment currently worn
+4,방진마스크,Dust mask
+5,보안경,Safety glasses
+6,프린터 컴퓨터연경,Printer computer connection
+7,슬라이서,Slicer
+8,프린터 컴퓨터에 연결됨,Printer connected to computer
+9,프린터 상태 확인,Check the printer status
+10,프린터 상태 보기,View printer status
+11,슬라이서,Slicer
+12,헤드청소,Head cleaning
+13,프린터 상태 확인,Check the printer status
+14,점검 목록,Checklist
+15,Heads (℃),Heads (℃)
+16,Waste (gr),Waste (gr)
+17,Heads Liquid,Heads Liquid
+18,Ambient,Ambient
+19,Heads Vacuum,Heads Vacuum
+20,UV Lamps,UV Lamps
+21,Pre Heater Front,Pre Heater Front
+22,Pre Heater Rear,Pre Heater Rear
+23,프린터 헤드 온도,Print head temperature
+24,폐기물 용기 잔량,Remaining amount of waste container
+25,챔버 온도,Chamber temperature
+26,UV램프,UV lamp
+27,진공 상태,Vacuum state
+28,히터 온도,Heater temperature
+29,모두 완료,All done
+30,완료,complete
+31,모델 재료 상태,Model material status
+32,서포트 재료 상태,Support material condition
+33,프린터 상태명,Printer status name
+34,모델재료1 L,Model material 1 L
+35,모델재료1 R,Model material 1 R
+36,모델재료2 L,Model material 2 L
+37,모델재료2 R,Model material 2 R
+38,모델재료3 L,Model material 3 L
+39,모델재료3 R,Model Material 3 R
+40,서포트재료 L,Support material L
+41,서포트재료 R,Support material R
+42,4. 슬라이싱,4. Slicing
+43,프린터 상태 보기,View printer status
+44,슬라이서,Slicer
+45,헤드청소,Head cleaning
+46,5. 프린팅,5. Printing
+47,모델 불러오기,Load model
+48,이동,move
+49,회전,rotation
+50,모델뷰-등각,Model View-Isometric
+51,내부 채움: 기본(50%),Inner Fill: Basic (50%)
+52,배치 오류 확인,Check for batch errors
+53,프린팅 소요시간 확인,Check the printing time required
+54,프린팅,Printing
+55,EX1. STL (6시간),EX1. STL (6 hours)
+56,EX2. STL (12시간),EX2. STL (12 hours)
+57,6. 조형물 회수,6. Collection of sculptures
+58,printing,printing
+59,Completete,Completete
+60,모델재료1 L,Model material 1 L
+61,모델재료1 R,Model material 1 R
+62,모델재료2 L,Model material 2 L
+63,모델재료2 R,Model material 2 R
+64,모델재료3 L,Model material 3 L
+65,모델재료3 R,Model Material 3 R
+66,서포트재료 L,Support material L
+67,서포트재료 R,Support material R
+68,7. 조형물 후처리,7. Post-processing of sculptures
+69,8. 헤드 청소,8. Head cleaning
+70,프린터 상태 보기,View printer status
+71,슬라이서,Slicer
+72,헤드청소,Head cleaning
+73,9. 재료 보충,9. Material supplement
+74,점검 목록,Checklist
+75,모델 재료 상태,Model material status
+76,서포트 재료 상태,Support material condition
+77,실습을 완료하였습니다.<n>메인 화면으로 이동할까요?,You have completed the lab. <n>Would you like to go to the main screen?
+78,예,Yes
+79,아니요,no
+80,남은 시간,Time remaining
+81,평가 과제,Evaluation task
+82,"스패터, 내부 채움 무겁게<n>제한시간 : 30분","Spatter, internal filling heavy <n> Time limit: 30 minutes"
+83,평가 과제,Evaluation task
+84,스패너,Spanner
+85,내부 채움: 무겁게,Inner Fill: Heavy
+86,Heads (℃),Heads (℃)
+87,Waste (gr),Waste (gr)
+88,Heads Liquid,Heads Liquid
+89,Ambient,Ambient
+90,Heads Vacuum,Heads Vacuum
+91,UV Lamps,UV Lamps
+92,Pre Heater Front,Pre Heater Front
+93,Pre Heater Rear,Pre Heater Rear
+94,프린터 상태 확인하고 조치하기 : +10 점,Check the printer status and take action: +10 points
+95,재료분사프린터 실습평가,Material injection printer practice evaluation
+96,평가결과,Evaluation results
+97,평가항목,Evaluation item
+98,배점,points
+99,다시학습,Relearn
+100,컴퓨터와 프린터를 연결할 수 있다.,You can connect your computer and printer.
+101,프린터 상태를 확인하고 조치할 수 있다.,You can check the printer status and take action.
+102,"모델의 이동, 회전, 내부채움, 배치오류 및 계산을 할 수 있다.","Model can be moved, rotated, filled inside, placed errors, and calculated."
+103,프린팅을 할 수 있다.,You can print.
+104,조형물을 회수하고 트레이를 정리할 수 있다.,You can retrieve the sculpture and arrange the tray.
+105,워터젯을 사용하여 서포트를 제거할 수 있다.,The support can be removed using a water jet.
+106,헤드를 청소할 수 있다.,The head can be cleaned.
+107,재료 상태를 확인하고 보충할 수 있다.,You can check and replenish the material condition.
+108,안전하게 작업할 수 있다.,You can work safely.
+109,시간내 프린팅할 수 있다.,You can print in time.
+110,/10,/10
+111,/20,/20
+112,/20,/20
+113,/10,/10
+114,/10,/10
+115,/10,/10
+116,/10,/10
+117,/F,/F
+118,/F,/F
+119,메인화면으로,To the main screen
+120,다시 평가하기(전체),Re-evaluate (All)
+121,학습 목차,Table of contents
+122,01 준비,01 preparation
+123,02 컴퓨터와 프린터를 연결,02 Connecting computer and printer
+124,03 프린터 상태 확인,03 Check the printer status
+125,04 슬라이싱,04 slicing
+126,05 프린팅,05 printing
+127,06 조형물 회수,06 Collection of sculptures
+128,07 조형물 후처리,07 Post-processing of sculptures
+129,08 헤드 청소,08 Head cleaning
+130,09 재료 보충,09 Ingredient Supplement
+131,안녕하세요. 재료분사3D프린터 실습에 오신 것을 환영합니다.<n>지금 보고 계신 것은 정상적으로 프린팅을 마친 뒤 후처리까지 완료한 조형물 입니다.,Good morning. Welcome to the material injection 3D printer practice.<n>What you are looking at is a sculpture that has been normally printed and then post-processed.
+132,"이번 재료분사3D프린터 실습은 총 8개 과정으로 진행되며, <n>프린터를 설정하고 조작하여 위와 같은 조형물을 완성하는 것을 목표로 합니다.<n>그럼, 작업에 필요한 도구와 장비를 확인해 볼까요?","This material injection 3D printer practice consists of a total of 8 courses, and aims to complete the above sculpture by setting up and operating the printer. <n>Then, shall we check the tools and equipment necessary for the work?"
+133,"다음으로, 컴퓨터와 프린터를 연결해 보겠습니다.","Next, let's connect the computer and printer."
+134,컴퓨터에서 '프린터 컴퓨터 연결' 버튼을 더블클릭해주세요.,Double-click the'Connect Printer Computer' button on your computer.
+135,정상적으로 프린터가 컴퓨터에 연결되었습니다.,The printer is connected to the computer normally.
+136,이제 컴퓨터에서 프린터 상태를 확인하실 수 있습니다.,You can now check the printer status on your computer.
+137,"프린팅을 지시하기 전, 컴퓨터를 사용하여 프린터가 프린팅을 수행할 수 있는 상태인지 확인해보겠습니다.","Before instructing to print, let's use a computer to make sure the printer is ready to print."
+138,'프린터 상태 보기' 아이콘을 더블클릭 해주세요.,Double-click the'View Printer Status' icon.
+139,지금 보고 계신 것은 프린터 인터페이스입니다.,What you're looking at is the printer interface.
+140,"프린터 인터페이스에서는 프린터 헤드의 온도와 폐기물 용기의 잔량, 진공과 히터 등의 상태를 확인하실 수 있습니다.","From the printer interface, you can check the printer head temperature, the remaining amount of the waste container, and the status of the vacuum and heater."
+141,마우스를 움직여 각 항목이 무엇을 나타내는지 확인해보세요.,Move your mouse to see what each item represents.
+142,"그런데, 현재 헤드 온도가 프린팅을 수행하기에 적절하지 않은 온도라 붉은 색으로 표시되어 있습니다.","However, the current head temperature is indicated in red because it is not suitable for printing."
+143,적절한 온도가 될 때까지 기다려보겠습니다.,Let’s wait until it reaches the right temperature.
+144,붉은색으로 표시된 부분을 클릭해 주세요.,Please click the area marked in red.
+145,헤드 온도가 정상범위로 변경되었습니다.,The head temperature has been changed to the normal range.
+146,이제 재료 상태를 확인해보겠습니다.,Now let’s check the material status.
+147,프린터 인터페이스의 토글 버튼을 눌러주세요.,Press the toggle button on the printer interface.
+148,토글된 화면에서는 프린터 재료의 잔량을 확인하실 수 있습니다. 현재 모든 재료가 충분한 상태입니다.,"On the toggled screen, you can check the remaining amount of printer material. All ingredients are currently in sufficient condition."
+149,"프린터가 정상적으로 프린팅이 가능한 상태임을 확인하였으니, 이제 슬라이싱 작업에 대해 알아보겠습니다.","Now that we have verified that the printer is in a normal printing state, let’s look at the slicing operation."
+150,프린터 인터페이스 우측 상단의 X 표시를 눌러 프린터 인터페이스를 닫아주세요.,Close the printer interface by clicking the X mark on the upper right of the printer interface.
+151,"슬라이싱이란, 3D 모델링 파일을 프린터가 프린팅에 사용할 수 있는 데이터로 변환하는 작업을 말합니다.<n>변환된 데이터를 지코드(G-Code)라고 하는데, 이 지코드에는 적층 두께나 내부 채움 비율 등의 정보가 들어있습니다.<n>컴퓨터 모니터에서 ‘슬라이서’ 아이콘을 더블클릭해  슬라이서 프로그램을 실행시켜보겠습니다.","Slicing refers to the process of converting 3D modeling files into data that can be used by the printer for printing.<n>The converted data is called G-Code, which includes stacking thickness and internal filling ratio. <n>I will run the slicer program by double-clicking the'slicer' icon on the computer monitor."
+152,슬라이서 좌측 상단의 ‘모델 불러오기‘ 버튼을 클릭해 주세요.,Click the'Load Model' button at the top left of the slicer.
+153,스패너 모양의 EX1. STL 모델을 불러옵니다.,Spanner-shaped EX1. Load the STL model.
+154,"'모델 불러오기'를 클릭한 뒤, EX1.STL(스패너)를 클릭합니다.",Click'Load Model' and then click EX1.STL (spanner).
+155,화면의 직사각형 영역은 실제로 프린팅이 진행되는 빌드트레이 영역을 나타냅니다.,The rectangular area on the screen represents the build tray area where printing is actually done.
+156,"먼저, ‘이동’ 버튼과 ‘회전’ 버튼을 클릭해 모델을 빌드트레이 범위 내로 위치시켜보세요.","First, click the ‘Move’ button and the ‘Rotate’ button to place the model within the build tray."
+157,"프린팅에 소요되는 시간을 단축하고 재료를 효율적으로 사용하려면, 모델을 빌드트레이 범위 내에 올바르게 배치해야 합니다.","In order to shorten the time it takes to print and to use materials efficiently, the model must be properly placed within the build tray."
+158,"모델뷰 버튼을 클릭해 시점을 바꾸어가면서 모델을 배치하고, ‘배치 오류 확인‘ 버튼을 클릭해서 모델이 올바르게 배치되었는지 여부를 확인해 보세요.","Click the Model View button to place the model while changing viewpoints, and click the ‘Check for placement errors’ button to check whether the model is placed correctly."
+159,"모델이 올바르게 배치되지 않았다면, 붉은 색으로 표시됩니다.","If the model is not positioned correctly, it is displayed in red."
+160,"모델이 올바르게 배치되었습니다. 그럼 이제, 내부 채움 옵션에 대해서 알아보겠습니다. <n>내부 채움 옵션은 조형물의 강도에 영향을 미칩니다.<n>속빈, 가볍게, 기본, 무겁게 총 네 가지의 옵션이 있으나, 이번 실습 과정에서는 ‘기본’ 옵션을 사용하겠습니다.","The model is positioned correctly. So now, let’s look at the internal fill options. The <n>Inner Fill option affects the strength of the sculpture. <n>There are four options: Hollow, Light, Basic, and Heavy, but in this lab we will use the'Basic' option."
+161,마지막으로 프린팅에 소요되는 예상 시간을 확인해 보겠습니다.<n>‘프린팅 소요시간 확인‘ 버튼을 클릭해 예상 시간을 확인해 주세요.,"Finally, let's check the estimated time required for printing. <n>Click the'Check Printing Time' button to check the estimated time."
+162,슬라이싱 작업이 완료되었습니다.,The slicing operation is complete.
+163,이제 본격적으로 프린팅을 지시해보겠습니다.,"Now, I will instruct the printing in earnest."
+164,"'프린팅' 버튼을 클릭해주세요.",Click the'Print' button.
+165,프린팅이 진행되며 프린터 상태가 바뀌었습니다.,Printing is in progress and the printer status has changed.
+166,"프린팅에는 오랜 시간이 소요되므로, 우측의 빨리감기 버튼을 눌러 프린팅을 완료해보겠습니다.","Printing takes a long time, so I will press the fast forward button on the right to finish printing."
+167,프린팅이 완료되어 프린팅 상태가 완료(Complete)로 바뀌었습니다.,Printing is complete and the printing status has changed to Complete.
+168,이제 완성된 조형물을 회수해보겠습니다.,"Now, let’s retrieve the finished sculpture."
+169,프린터 커버를 열어줍니다.,Open the printer cover.
+170,"작업테이블에 놓여있는 마스크, 보안경, 장갑을 착용합니다.","Put on the mask, safety glasses and gloves on the worktable."
+171,"스크래퍼를 사용하여 조형물을 빌드트레이에서 분리하고, 잔여물을 제거합니다.",Separate the sculpture from the build tray using a scraper and remove the residue.
+172,트레이를 청소합니다.,Clean the tray.
+173,이동용 받침대를 사용하여 조형물을 워터젯으로 이동합니다.,Move the sculpture to the waterjet using the moving pedestal.
+174,이제 조형물에서 잔여물을 제거하는 후처리 과정을 진행해 보겠습니다.,"Now, let's proceed with the post-processing process to remove the residue from the sculpture."
+175,"먼저, 회수한 조형물을 워터젯 내부로 투입 후 잠금장치로 잠궈줍니다.","First, insert the recovered sculpture into the water jet and lock it with a locking device."
+176,워터젯의 전원을 켭니다.,Turn on the waterjet.
+177,워터젯 방수장갑을 착용합니다.,Wear waterjet waterproof gloves.
+178,왼손으로 조형물을 잡습니다.,Hold the sculpture with your left hand.
+179,오른손으로 호스를 잡습니다.,Hold the hose with your right hand.
+180,페달(분사 스위치)을 밟아 분사하여 서포트를 제거합니다.,Press the pedal (injection switch) to spray to remove the support.
+181,서포트가 제거된 것을 확인합니다.,Confirm that the support has been removed.
+182,워터젯 방수장갑을 벗습니다.,Take off the waterjet waterproof gloves.
+183,후처리가 완료된 조형물을 워터젯에서 꺼냅니다.,Take out the post-processed sculpture from the water jet.
+184,이제 프린터 헤드를 청소해 보겠습니다.,Now let's clean the print head.
+185,"마스크와 보안경, 장갑을 착용합니다.","Wear a mask, safety glasses and gloves."
+186,프린터 컴퓨터에서 유지보수-'헤드청소' 명령을 수행합니다.,Perform a maintenance-'head cleaning' command on the printer computer.
+187,커버를 닫으라는 메시지가 표시됩니다. 커버를 닫은 뒤 확인 버튼을 눌러줍니다.,You are prompted to close the cover. Close the cover and click the OK button.
+188,트레이가 비어있는지 확인하라는 메시지가 표시됩니다. 트레이를 닫고 확인 버튼을 눌러줍니다.,You are prompted to confirm that the tray is empty. Close the tray and click the OK button.
+189,'다음' 버튼을 눌러주세요.,Please click the'Next' button.
+190,"트레이가 하강하고, 헤드가 청소위치로 이동합니다.",The tray is lowered and the head moves to the cleaning position.
+191,거울을 트레이에 위치하여 헤드 안쪽을 볼 수 있도록 합니다.,Place the mirror on the tray so you can see inside the head.
+192,면 타올에 알코올을 수 회 분사합니다.,Spray alcohol several times on the cotton towel.
+193,헤드를 면 타올로 닦아냅니다.,Wipe the head with a cotton towel.
+194,'다음' 버튼을 클릭합니다. 트레이 및 프린터 블록이 원점으로 복귀합니다.,Click the'Next' button. The tray and printer block return to the origin.
+195,헤드 청소를 완료하였습니다.,Head cleaning is complete.
+196,"마지막으로, 재료 상태를 확인하고 소모된 재료를 보충해보겠습니다.","Finally, let's check the material status and replenish the consumed material."
+197,컴퓨터에서 '프린터 상태 보기'를 더블클릭하여 재료 상태를 확인해 주세요.,Double-click'View Printer Status' on your computer to check the material status.
+198,모델 재료 및 서포트 재료가 충분하지 않습니다.,Insufficient model material and support material.
+199,모델 재료와 서포트 재료를 재료 보관함에 투입해 보겠습니다.,Let's put the model material and support material into the material storage box.
+200,"프린터 옆에 위치한 재료보관함의 커버를 열어 소모된 재료를 제거합니다.<n>이 때, 재료 번호를 반드시 확인해주세요.",Remove the used material by opening the cover of the material storage box located next to the printer.
+201,"다음으로, 새 재료를 장착합니다.","Next, mount the new material."
+202,프린터 컴퓨터의 모델 재료와 서포트 재료 상태가 업데이트 되었습니다.,The model material and support material status of the printer computer have been updated.
+203,재료 보충이 완료되었습니다.,Material replenishment is complete.
+204,재료분사프린터 실습을 완료하였습니다. 수고하셨습니다.,You have completed the material injection printer practice. Thank you.
