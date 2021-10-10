@@ -43,7 +43,13 @@ public class xAPISender : MonoBehaviour
     public string UserID = "null";
 
     public int hint_count = 0;
-
+    public int[] hint_target;
+    public enum StatementLiteral
+    {
+        Lesson_MetarialJetting,
+        Behavior_ConnectComputer
+    }
+    public Dictionary<StatementLiteral, string> LiteralStringDictionary;
     EvaluationSceneController evaluationSceneController;
 
     public string EndPoint
@@ -74,7 +80,9 @@ public class xAPISender : MonoBehaviour
     public void Init()
     {
         SetRemoteLRS();
-        
+        hint_target = new int[2];
+        hint_target[0] = 0;
+        hint_target[1] = 0;
         //lrs_res = lrs.SaveStatement(imr_statement.GetStatement());
     }
     public void setActorName(string actorName)
@@ -134,7 +142,7 @@ public class xAPISender : MonoBehaviour
         setActorName(id);
         Debug.Log("Login Success");
     }
-    public void SendHintStatement(string currentStepAction)
+    public void SendHintStatement()
     {
         hint_count++;
         JObject extension = new JObject();
@@ -142,7 +150,7 @@ public class xAPISender : MonoBehaviour
         hintcount.Add("hint-count", hint_count);
         extension.Add("https://www.koreatech.ac.kr/extension/hint", hintcount);
         JObject evealutionStep = new JObject();
-        evealutionStep.Add("evaluation-step", currentStepAction);
+        evealutionStep.Add("evaluation-step", DecodeSequence(hint_target[0],hint_target[1]));
         extension.Add("https://www.koreatech.ac.kr/extension/evaluation-step", evealutionStep);
 
         SendIMRStatement("performed", "hint", extension);

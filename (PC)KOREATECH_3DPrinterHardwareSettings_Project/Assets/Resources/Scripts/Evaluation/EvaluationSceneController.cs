@@ -183,7 +183,7 @@ public class EvaluationSceneController : MonoBehaviour
 
         //IMRLAB 09-28
         //팁 보기 문장 전송
-        xAPISender.instance.SendHintStatement(GuideUIController.TextUI.text);
+        //xAPISender.instance.SendHintStatement();
         Debug.Log("click help" + GuideUIController.TextUI.text);
     }
 
@@ -304,10 +304,17 @@ public class EvaluationSceneController : MonoBehaviour
 
             //IMRLAB 09-28
             //행동 문장 전송
-            Debug.Log("Test: " + Checklist.evaluationChecklist[targetSeq][targetStep].Text.text);
+            Debug.Log("Test: " + Checklist.evaluationChecklist[targetSeq][targetStep+1].Text.text);
+            Debug.Log("Test: " + SequenceConatiner._sequenceList[targetSeq].Name);
             Debug.Log("targetSeq: " + targetSeq + "targetStep: " + targetStep);
 
-            xAPISender.instance.SendMessageWithTranslate(targetSeq,targetStep);
+            XAPIApplication.S.jettingLessonManager.SetEvaluationItemElement(
+                SequenceConatiner._sequenceList[targetSeq].Name,
+                Checklist.evaluationChecklist[targetSeq][targetStep+1].Text.text);
+            
+            XAPIApplication.S.SendJettingStatement("Choice");
+
+            //xAPISender.instance.SendMessageWithTranslate(targetSeq,targetStep);
         }
         else
         {
@@ -327,16 +334,21 @@ public class EvaluationSceneController : MonoBehaviour
             return;
         }
 
+        //IMRLAB - 수정 예정
         if (SequenceConatiner._sequenceList[targetSeq].scoreItems.Count - 1 <= targetStep)
         {
             if (targetSeq + 1 >= SequenceConatiner._sequenceList.Count)
                 return;
 
             GuideUIController.SetMessage(SequenceConatiner._sequenceList[targetSeq + 1].scoreItems[0].Tip);
+
+
+
         }
         else
         {
             GuideUIController.SetMessage(SequenceConatiner._sequenceList[targetSeq].scoreItems[targetStep + 1].Tip);
+
         }
     }
 

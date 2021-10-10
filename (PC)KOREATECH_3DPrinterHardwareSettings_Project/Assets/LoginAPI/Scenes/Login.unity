@@ -1567,7 +1567,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 7.214291e+22}
+  m_BoundingSphereOverride: {x: 1e-45, y: 0, z: 9.7e-44, w: 0.0390625}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4753,6 +4753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050181785}
+  - component: {fileID: 2050181787}
   - component: {fileID: 2050181786}
   m_Layer: 0
   m_Name: xAPIObject
@@ -4784,13 +4785,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2050181784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf780861aa65614e84d030f280dd3da, type: 3}
+  m_Script: {fileID: 11500000, guid: a2ed0facca433c1488b16a9f801471fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temp: plz input endpoint here
+--- !u!114 &2050181787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050181784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0f11f718401d0498bc430ea7c8b294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debug_msg: 
-  NowLesson: null
-  NowActivity: null
-  UserID: null
 --- !u!1 &2139372413
 GameObject:
   m_ObjectHideFlags: 0

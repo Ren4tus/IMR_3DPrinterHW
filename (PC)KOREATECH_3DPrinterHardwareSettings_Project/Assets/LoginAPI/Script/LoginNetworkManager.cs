@@ -318,6 +318,7 @@ public class LoginNetworkManager : LoginNetworkSingleton<LoginNetworkManager>
 
 	void ReqContentTrainingStatus()
 	{
+		Debug.Log("req test");
 		string url = StepURL.m_KoreatechURL + "/api/rest/getEnrollCourse";
 
 		//List<VRCourse> list = VRContents.m_VRContents;
@@ -422,13 +423,11 @@ public class LoginNetworkManager : LoginNetworkSingleton<LoginNetworkManager>
 		m_IsCheckLoginState = true;
 		CheckLoginStatus();
 
-
-		//imrlab 09-28
+		//imrlab 10-07
 		//로그인 성공 시 xapi 전송
-
 		LoginSceneControl loginSceneControl = GameObject.Find("LoginSceneControl").GetComponent<LoginSceneControl>();
-
-		xAPISender.instance.SendLoginMessageStatement(loginSceneControl.m_Id.text);
+		XAPIApplication.S.SendLoginStatement(loginSceneControl.m_Id.text);
+		//
 
 		SceneManager.LoadScene(m_NextSceneLevel);
 	}

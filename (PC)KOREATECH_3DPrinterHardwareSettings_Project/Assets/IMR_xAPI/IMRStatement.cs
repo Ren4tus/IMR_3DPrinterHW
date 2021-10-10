@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TinCan;
+﻿using TinCan;
 using TinCan.LRSResponses;
 using System;
 using Newtonsoft.Json.Linq;
@@ -42,10 +39,12 @@ namespace IMR
 
         public virtual void SetActor()
         {
-            var actor = xAPISender.instance.ActorName;
+            var actor = XAPIApplication.S.ActorName;
             _actor.mbox = "mailto:" + actor.Replace(" ", "") + "@google.com";
             _actor.name = actor;
             _statement.actor = _actor;
+
+            UnityEngine.Debug.Log("SetActor "+ XAPIApplication.S.ActorName +"/"+ _statement.actor.mbox);
         }
 
         public virtual void SetVerb(string verb)
@@ -54,11 +53,13 @@ namespace IMR
             _verb.display = new LanguageMap();
             _verb.display.Add("en-US", verb);
             _statement.verb = _verb;
+
+            UnityEngine.Debug.Log("SetVerb " + _statement.verb.ToJSON());
         }
 
         public virtual void SetActivity(string activity)
         {
-            _activity.id = new Uri("https://www.koreatech.ac.kr/lesson/" + xAPISender.instance.NowLesson + "/" + activity.Replace(" ", "")).ToString();
+            _activity.id = new Uri("https://www.koreatech.ac.kr/" + activity.Replace(" ", "")).ToString();
             _statement.target = this._activity;
         }
 
@@ -86,7 +87,6 @@ namespace IMR
         {
             _authority.name = "KoreaTech";
             _authority.mbox = "mailto:KoreaTech@koreatech.ac.kr";
-
             _statement.authority = _authority;
         }
 
@@ -109,8 +109,9 @@ namespace IMR
             _statement.result = _result;
             _statement.timestamp = DateTime.Now;
             _statement.context = _context;
-            SetAuthority();
+            _statement.authority = _authority;
 
+            UnityEngine.Debug.Log(_statement.ToJSON());
             return _statement;
         }
     }
