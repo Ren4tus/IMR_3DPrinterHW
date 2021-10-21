@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 public class xAPISender : MonoBehaviour
 {
     public static xAPISender instance = null;
+    
     private void Awake()
     {
         if (instance == null)

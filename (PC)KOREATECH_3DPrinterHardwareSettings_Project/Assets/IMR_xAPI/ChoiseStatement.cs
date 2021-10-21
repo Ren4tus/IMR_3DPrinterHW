@@ -22,11 +22,11 @@ public class ChoiceStatement : IMRStatement
     {
         _result.success = b;
     }
-    public void SetScore(double? i)
+    public void SetScore(double i)
     {
-        //UnityEngine.Debug.Log(_result.score.scaled);
-        //if(i != null)
-        //    _result.score.scaled = i;
+        TinCan.Score score = new TinCan.Score();
+        score.raw = i;
+        _result.score = score;
 
     }
 }

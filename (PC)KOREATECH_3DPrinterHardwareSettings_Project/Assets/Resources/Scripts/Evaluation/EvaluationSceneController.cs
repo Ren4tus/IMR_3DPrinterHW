@@ -177,13 +177,16 @@ public class EvaluationSceneController : MonoBehaviour
         Destroy(this);
     } 
 
+
     public void ShowTips()
     {
         GuideUIController.Popup(GuidePopupDuraion);
 
-        //IMRLAB 09-28
+        //IMRLAB 10-21
         //팁 보기 문장 전송
-        //xAPISender.instance.SendHintStatement();
+
+        XAPIApplication.S.jettingLessonManager.AddHintCount(1);
+        XAPIApplication.S.SendJettingStatement("Hint");
         Debug.Log("click help" + GuideUIController.TextUI.text);
     }
 
@@ -234,6 +237,9 @@ public class EvaluationSceneController : MonoBehaviour
         cameraController.CameraControllOff();
 
         CL_CommonFunctionManager.Instance.MakePopUp().PopUp("평가가 종료되었습니다.", CL_MessagePopUpController.DialogType.NOTICE, RatingPanelOpen);
+        //IMRLAB - 10/14
+        //종료 문장 전송 - 현재 미사용
+        
     }
     
     public int[] GetParentSequenceIndex(int targetSeq)
@@ -311,7 +317,8 @@ public class EvaluationSceneController : MonoBehaviour
             XAPIApplication.S.jettingLessonManager.SetEvaluationItemElement(
                 SequenceConatiner._sequenceList[targetSeq].Name,
                 Checklist.evaluationChecklist[targetSeq][targetStep+1].Text.text);
-            
+
+            XAPIApplication.S.jettingLessonManager.AddResultStatement(SequenceConatiner._sequenceList[targetSeq].Name);
             XAPIApplication.S.SendJettingStatement("Choice");
 
             //xAPISender.instance.SendMessageWithTranslate(targetSeq,targetStep);
@@ -331,6 +338,13 @@ public class EvaluationSceneController : MonoBehaviour
         if (SequenceConatiner.IsAllComplete()) // 모든 단계를 완료했을 시
         {
             EvaluationEnd();
+            //IMRLAB - 10/14 완료 문장 전송
+            if (!XAPIApplication.S.terminatied)
+            {
+                XAPIApplication.S.terminatied = true;
+                XAPIApplication.S.SendJettingStatement("Terminate");
+
+            }
             return;
         }
 
@@ -342,13 +356,14 @@ public class EvaluationSceneController : MonoBehaviour
 
             GuideUIController.SetMessage(SequenceConatiner._sequenceList[targetSeq + 1].scoreItems[0].Tip);
 
-
+            XAPIApplication.S.jettingLessonManager.SetHintStatementResultExtensions(SequenceConatiner._sequenceList[targetSeq + 1].scoreItems[0].Tip);
 
         }
         else
         {
             GuideUIController.SetMessage(SequenceConatiner._sequenceList[targetSeq].scoreItems[targetStep + 1].Tip);
 
+            XAPIApplication.S.jettingLessonManager.SetHintStatementResultExtensions(SequenceConatiner._sequenceList[targetSeq].scoreItems[targetStep + 1].Tip);
         }
     }
 
@@ -442,6 +457,10 @@ public class EvaluationSceneController : MonoBehaviour
         startSeq = false;
         yield return new WaitForSeconds(time);
         AssignmentPopup.Show(1f); // 과제 설명 팝업
+
+        //IMRLAB - 10/14
+        //종료 문장 result list init
+        XAPIApplication.S.jettingLessonManager.InitResultStatement(SequenceConatiner);
     }
 
     private IEnumerator Timer_co(int seconds)

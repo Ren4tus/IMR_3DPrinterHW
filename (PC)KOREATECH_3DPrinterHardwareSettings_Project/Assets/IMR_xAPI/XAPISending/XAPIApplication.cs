@@ -10,7 +10,7 @@ public class XAPIApplication : Singleton<XAPIApplication>
 {
 
     public static XAPIApplication current;
-
+    public bool terminatied = false;
     public LoginLessonManager loginLessonManager;
     public JettingLessonManager jettingLessonManager;
     //public MotorLessonManager motor_lesson_manager;
@@ -90,6 +90,7 @@ public class XAPIApplication : Singleton<XAPIApplication>
         switch (sceneName)
         {
             case "EvaluationCH1":
+                terminatied = false;
                 SendJettingStatement("Init");
                 break;
         }
