@@ -5,21 +5,20 @@ using TinCan;
 using UnityEngine;
 using UnityEngine.UI;
 //TODO: 나머지 요소들 채워넣기.
-public class JettingLessonManager : Lesson
+public class PhotopolymerizationLessonManager : Lesson
 {
     public VerticalLayoutGroup resultCanvas;
     private List<Dictionary<string, string>> result_statements;
     private string _hintText;
-
     //TODO: 이름 바꿔놓기 Select로
-    private InitalizeStatement _init_statement; 
+    private InitalizeStatement _init_statement;
     private ChoiceStatement _choice_statement;
     private HintStatement _hint_Statement;
-    private TimeLimiteStatement _time_limite_statement; 
+    private TimeLimiteStatement _time_limite_statement;
     private ResultStatement _result_statement;
     private JettingTerminateStatement _jettingTerminateStatement;
 
-    public JettingLessonManager() => Init();
+    public PhotopolymerizationLessonManager() => Init();
     public sealed override void Init()
     {
         statement_dictionary = new Dictionary<string, IMRStatement>();
@@ -34,7 +33,7 @@ public class JettingLessonManager : Lesson
 
 
         SetObject();
-        
+
         statement_dictionary.Add("Init", _init_statement);
         statement_dictionary.Add("Choice", _choice_statement);
         statement_dictionary.Add("Hint", _hint_Statement);
@@ -45,28 +44,28 @@ public class JettingLessonManager : Lesson
 
     public void SetObject()
     {
-        _init_statement.SetActivity("3DPrinterHWSetting/material-jetting-3Dprinter");
-        _choice_statement.SetActivity("3DPrinterHWSetting/material-jetting-3Dprinter/select");
-        _time_limite_statement.SetActivity("3DPrinterHWSetting/material-jetting-3Dprinter/limit-time");
+        _init_statement.SetActivity("3DPrinterHWSetting/photopolymerization-3Dprinter");
+        _choice_statement.SetActivity("3DPrinterHWSetting/photopolymerization-3Dprinter/select");
+        _time_limite_statement.SetActivity("3DPrinterHWSetting/photopolymerization-3Dprinter/limit-time");
         _result_statement.SetActivity("3DPrinterHWSetting");
-        _jettingTerminateStatement.SetActivity("3DPrinterHWSetting/material-jetting-3Dprinter");
-        _hint_Statement.SetActivity("3DPrinterHWSetting/material-jetting-3Dprinter/hint");
+        _jettingTerminateStatement.SetActivity("3DPrinterHWSetting/photopolymerization-3Dprinter");
+        _hint_Statement.SetActivity("3DPrinterHWSetting/photopolymerization-3Dprinter/hint");
         _jettingTerminateStatement.SetResultExtensionFromResultStatements(result_statements);
         _hint_Statement.SetHintExtensions(_hintText, _hintCount);
     }
     public override void ChangeNewStatement(string name)
     {
-        switch(name)
+        switch (name)
         {
             case "Init":
                 _init_statement = new InitalizeStatement();
-                statement_dictionary["Init"]= _init_statement;
+                statement_dictionary["Init"] = _init_statement;
                 SetObject();
 
                 break;
             case "Choice":
                 _choice_statement = new ChoiceStatement();
-                statement_dictionary["Choice"]= _choice_statement;
+                statement_dictionary["Choice"] = _choice_statement;
                 SetObject();
 
                 break;
@@ -74,12 +73,12 @@ public class JettingLessonManager : Lesson
                 _hint_Statement = new HintStatement();
                 statement_dictionary["Hint"] = _hint_Statement;
                 SetObject();
-                _hint_Statement.SetHintExtensions(_hintText,_hintCount);
+                _hint_Statement.SetHintExtensions(_hintText, _hintCount);
 
                 break;
             case "Time":
                 _time_limite_statement = new TimeLimiteStatement();
-                statement_dictionary["Time"]= _time_limite_statement;
+                statement_dictionary["Time"] = _time_limite_statement;
                 SetObject();
 
                 break;
@@ -97,7 +96,7 @@ public class JettingLessonManager : Lesson
                 break;
         }
     }
-    public override void SetEvaluationItemElement(string _item,string _step)
+    public override void SetEvaluationItemElement(string _item, string _step)
     {
         JObject resultExtension = new JObject();
 
@@ -171,7 +170,7 @@ public class JettingLessonManager : Lesson
 
     public void InitResultStatement(EvaluationCore.EvaluationContainer SequenceConatiner)
     {
-        foreach(KeyValuePair<int, EvaluationCore.EvaluationSequence> element in SequenceConatiner._sequenceList)
+        foreach (KeyValuePair<int, EvaluationCore.EvaluationSequence> element in SequenceConatiner._sequenceList)
         {
             AddResultStatement(element.Value.Name);
         }
@@ -182,7 +181,6 @@ public class JettingLessonManager : Lesson
         _hintText = hintText;
 
     }
-
 
     public override void SetLimitStatementResult(bool b)
     {
@@ -261,7 +259,5 @@ public class JettingLessonManager : Lesson
 
         //}
     }
-
 }
 
-   

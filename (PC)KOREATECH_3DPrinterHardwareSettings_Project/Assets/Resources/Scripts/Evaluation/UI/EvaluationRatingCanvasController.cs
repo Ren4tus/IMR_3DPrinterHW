@@ -88,7 +88,7 @@ public class EvaluationRatingCanvasController : MonoBehaviour
 
         return index;
     }
-
+    //IMRLAB 확인
     IEnumerator ScoreBoardAnimation_co(EvaluationContainer container)
     {
         int i = 0;

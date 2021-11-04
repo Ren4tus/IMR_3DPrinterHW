@@ -25,7 +25,7 @@ public class JettingTerminateStatement : IMRStatement
         extensions.Add("https://www.koreatech.ac.kr/extension/context", content);
         SetContextExtensions(extensions);
     }
-    public void SetResultExtensionFromResultStatements(List<Dictionary<string, int>> resultStatements)
+    public void SetResultExtensionFromResultStatements(List<Dictionary<string, string>> resultStatements)
     {
         JObject resultExtension = new JObject();
         List<JObject> results = new List<JObject>();
@@ -33,7 +33,7 @@ public class JettingTerminateStatement : IMRStatement
         for (int i = 0; i < resultStatements.Count; i++)
         {
 
-            foreach (KeyValuePair<string, int> element in resultStatements[i])
+            foreach (KeyValuePair<string, string> element in resultStatements[i])
             {
                 JObject tempProperty = new JObject();
                 JProperty item = new JProperty("evaluation-item", element.Key);
@@ -51,6 +51,7 @@ public class JettingTerminateStatement : IMRStatement
 
         SetResultExtensions(resultExtension);
     }
+
     public void SetContextExtensionLesson(string lessonName)
     {
         JObject extensionsJO = _context.extensions.ToJObject();

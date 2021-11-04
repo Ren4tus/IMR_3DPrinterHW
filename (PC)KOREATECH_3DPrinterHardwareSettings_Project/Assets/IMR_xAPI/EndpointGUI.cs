@@ -26,8 +26,8 @@ public class EndpointGUI : MonoBehaviour
     private void OnGUI()
     {
         temp = GUI.TextField(new Rect(10, 10, 200, 20), temp, 100);
-        GUI.Label(new Rect(30, 90, 300, 200), XAPIApplication.current.EndPoint);
-        GUI.Label(new Rect(30, 130, 300, 200), XAPIApplication.current.debug_msg);
+        //GUI.Label(new Rect(30, 90, 300, 200), XAPIApplication.current.EndPoint);
+        //GUI.Label(new Rect(30, 130, 300, 200), XAPIApplication.current.debug_msg);
         if (XAPIApplication.current.lrs_res != null)
             GUI.Label(new Rect(30, 160, 300, 200), 
                 XAPIApplication.current.lrs_res.ToString());

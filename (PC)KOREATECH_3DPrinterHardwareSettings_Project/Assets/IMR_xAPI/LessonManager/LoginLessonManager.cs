@@ -22,7 +22,7 @@ public class LoginLessonManager : Lesson
 
         statement_dictionary.Add("Init", _login_statement);
 
-        
+
     }
 
     public void SetObject()
@@ -43,11 +43,18 @@ public class LoginLessonManager : Lesson
 
         }
     }
-   
+
     public void SetContextExtensionUserID(string userID)
     {
         _login_statement._SetContextExtensionUserID(userID);
 
+    }
+    public override void SetLimitStatementResult(bool b)
+    {
+
+    }
+    public override void CloneResultCanvas(EvaluationCore.EvaluationContainer SequenceConatiner)
+    {
     }
 }
 

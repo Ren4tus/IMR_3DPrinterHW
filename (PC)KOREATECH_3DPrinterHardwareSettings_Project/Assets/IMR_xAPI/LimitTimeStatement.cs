@@ -13,6 +13,7 @@ public class TimeLimiteStatement : IMRStatement
         SetActor();
         SetVerb("performed");
         SetActivity("3DPrinterHWSetting/limit-time");
+        SetResultSuccess(true);
         var extensions = new JObject();
         var content = new JObject {{"content", "3DPrinterHWSetting" } };
         extensions.Add("https://www.koreatech.ac.kr/extension/context",content);

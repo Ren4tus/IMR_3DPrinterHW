@@ -13,9 +13,10 @@ public class XAPIApplication : Singleton<XAPIApplication>
     public bool terminatied = false;
     public LoginLessonManager loginLessonManager;
     public JettingLessonManager jettingLessonManager;
-    //public MotorLessonManager motor_lesson_manager;
-    //public ReducerLessonManager reducer_lesson_manager;
-   
+    public PhotopolymerizationLessonManager photopolymerizationLessonManager;
+    public PowderBedFusionLessonManager powderBedFusionLessonManager;
+    public Lesson nowLessonManager;
+
     private string _endpoint = "http://www.vt-lrs.com/data/xAPI";
     private string _key = "812073176a6f25e4ddd1cb6c80fadac19e05221e";
     private string _secret_key = "2307f2b781f07c4aaaaede4ef5ee6cfce306f2f8";
@@ -25,7 +26,7 @@ public class XAPIApplication : Singleton<XAPIApplication>
     public StatementLRSResponse lrs_res = null;
     
     private string actor_name = "korea_tech";
-
+    private string currentLesson = "NULL";
     //IMRLAB 
     public string ActorName
     { 
@@ -83,6 +84,8 @@ public class XAPIApplication : Singleton<XAPIApplication>
     public void LessonManagerInit()
     {
         jettingLessonManager = new JettingLessonManager();
+        photopolymerizationLessonManager = new PhotopolymerizationLessonManager();
+        powderBedFusionLessonManager = new PowderBedFusionLessonManager();
     }
     //IMRLAB 10-07 추가
     public void SendInitStatementByRowSceneName(string sceneName)
@@ -91,18 +94,49 @@ public class XAPIApplication : Singleton<XAPIApplication>
         {
             case "EvaluationCH1":
                 terminatied = false;
-                SendJettingStatement("Init");
+                nowLessonManager = jettingLessonManager;
+                SendIMRXAPIStatement("Init");
+                currentLesson = "EvaluationCH1";
+                break;
+            case "EvaluationCH2":
+                terminatied = false;
+                nowLessonManager = photopolymerizationLessonManager;
+                SendIMRXAPIStatement("Init");
+                currentLesson = "EvaluationCH2";
+                break;
+            case "EvaluationCH3":
+                terminatied = false;
+                nowLessonManager = powderBedFusionLessonManager;
+                SendIMRXAPIStatement("Init");
+                currentLesson = "EvaluationCH3";
                 break;
         }
     }
-    
-    public bool SendJettingStatement(string name)
+    public void SetNowLessonFromNowActiveScene()
     {
-        var imr_statement = jettingLessonManager.GetIMRStatement(name);
+        switch (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name)
+        {
+            case "EvaluationCH1":
+                nowLessonManager = jettingLessonManager;
+                break;
+            case "EvaluationCH2":
+                nowLessonManager = photopolymerizationLessonManager;
+                break;
+            case "EvaluationCH3":
+                nowLessonManager = powderBedFusionLessonManager;
+                break;
+        }
+        
+    }
+    public bool SendIMRXAPIStatement(string name)
+    {
+        SetNowLessonFromNowActiveScene();
+
+        var imr_statement = nowLessonManager.GetIMRStatement(name);
         lrs_res = lrs.SaveStatement(imr_statement.GetStatement());
         if (lrs_res.success) //Success
         {
-            jettingLessonManager.ChangeNewStatement(name);
+            nowLessonManager.ChangeNewStatement(name);
             Debug.Log("Save statement: " + lrs_res.content.id);
             return true;
         }
@@ -111,6 +145,10 @@ public class XAPIApplication : Singleton<XAPIApplication>
             Debug.Log("Statement Failed: " + lrs_res.errMsg);
             return false;
         }
+    }
+    public void AddHintCount(int n)
+    {
+        nowLessonManager.AddHintCount(n);
     }
 
     //IMRLAB 10-07 추가
@@ -142,7 +180,25 @@ public class XAPIApplication : Singleton<XAPIApplication>
         
         
     }
+    public void GetResultCanvas(EvaluationCore.EvaluationContainer SequenceConatiner)
+    {
+        //todo: 다른 레슨에 대해 추가
 
+        StartCoroutine(callResultCanvas(SequenceConatiner));
+    }
+
+    IEnumerator callResultCanvas(EvaluationCore.EvaluationContainer SequenceConatiner)
+    {
+        yield return new WaitForSeconds(0.1f);
+        nowLessonManager.CloneResultCanvas(SequenceConatiner);
+        nowLessonManager.ChangeNewStatement("Terminate");
+        XAPIApplication.S.SendIMRXAPIStatement("Terminate");
+
+    }
+    public void SetTimeLimitSucces(bool b)
+    {
+        nowLessonManager.SetLimitStatementResult(b);
+    }
     //public bool SendReducerStatement(string name)
     //{
     //    var imr_statement = reducer_lesson_manager.GetIMRStatement(name);

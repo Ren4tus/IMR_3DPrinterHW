@@ -185,8 +185,8 @@ public class EvaluationSceneController : MonoBehaviour
         //IMRLAB 10-21
         //팁 보기 문장 전송
 
-        XAPIApplication.S.jettingLessonManager.AddHintCount(1);
-        XAPIApplication.S.SendJettingStatement("Hint");
+        XAPIApplication.S.AddHintCount(1);
+        XAPIApplication.S.SendIMRXAPIStatement("Hint");
         Debug.Log("click help" + GuideUIController.TextUI.text);
     }
 
@@ -196,6 +196,9 @@ public class EvaluationSceneController : MonoBehaviour
     public void EvaluationStart()
     {
         isEvaluationStart = true;
+        //IMRLAB 11-04 힌트 텍스트 init
+        XAPIApplication.S.nowLessonManager.SetHintStatementResultExtensions(SequenceConatiner._sequenceList[0].scoreItems[0].Tip);
+        XAPIApplication.S.nowLessonManager.ChangeNewStatement("Hint");
         GuideUIController.SetMessage(SequenceConatiner._sequenceList[0].scoreItems[0].Tip);
 
         if (CL_CommonFunctionManager.Instance.UseTutorial())
@@ -237,9 +240,14 @@ public class EvaluationSceneController : MonoBehaviour
         cameraController.CameraControllOff();
 
         CL_CommonFunctionManager.Instance.MakePopUp().PopUp("평가가 종료되었습니다.", CL_MessagePopUpController.DialogType.NOTICE, RatingPanelOpen);
-        //IMRLAB - 10/14
-        //종료 문장 전송 - 현재 미사용
-        
+        //IMRLAB - 10/14 완료 문장 전송
+        if (!XAPIApplication.S.terminatied)
+        {
+            XAPIApplication.S.GetResultCanvas(SequenceConatiner);
+            Debug.Log("Terminated send");
+            XAPIApplication.S.terminatied = true;
+
+        }
     }
     
     public int[] GetParentSequenceIndex(int targetSeq)
@@ -314,12 +322,13 @@ public class EvaluationSceneController : MonoBehaviour
             Debug.Log("Test: " + SequenceConatiner._sequenceList[targetSeq].Name);
             Debug.Log("targetSeq: " + targetSeq + "targetStep: " + targetStep);
 
-            XAPIApplication.S.jettingLessonManager.SetEvaluationItemElement(
+
+            XAPIApplication.S.nowLessonManager.SetEvaluationItemElement(
                 SequenceConatiner._sequenceList[targetSeq].Name,
                 Checklist.evaluationChecklist[targetSeq][targetStep+1].Text.text);
-
-            XAPIApplication.S.jettingLessonManager.AddResultStatement(SequenceConatiner._sequenceList[targetSeq].Name);
-            XAPIApplication.S.SendJettingStatement("Choice");
+           
+            //XAPIApplication.S.jettingLessonManager.AddResultStatement(SequenceConatiner._sequenceList[targetSeq].Name);
+            XAPIApplication.S.SendIMRXAPIStatement("Choice");
 
             //xAPISender.instance.SendMessageWithTranslate(targetSeq,targetStep);
         }
@@ -327,7 +336,7 @@ public class EvaluationSceneController : MonoBehaviour
         {
             // 점수창 표시
             ScoreMsgController.GainScoreMsgPopup(SequenceConatiner._sequenceList[targetSeq].scoreItems[targetStep].Name, 0, true);
-
+            //XAPIApplication.S.jettingLessonManager.AddResultStatement(SequenceConatiner._sequenceList[targetSeq].Name);
             // 체크리스트 업데이트
             Checklist.evaluationChecklist[targetSeq][targetStep + 1].SetBackgroundColor(Checklist.SkipColor);
 
@@ -338,13 +347,8 @@ public class EvaluationSceneController : MonoBehaviour
         if (SequenceConatiner.IsAllComplete()) // 모든 단계를 완료했을 시
         {
             EvaluationEnd();
-            //IMRLAB - 10/14 완료 문장 전송
-            if (!XAPIApplication.S.terminatied)
-            {
-                XAPIApplication.S.terminatied = true;
-                XAPIApplication.S.SendJettingStatement("Terminate");
-
-            }
+            XAPIApplication.S.SetTimeLimitSucces(true);
+            XAPIApplication.S.SendIMRXAPIStatement("Time");
             return;
         }
 
@@ -356,14 +360,14 @@ public class EvaluationSceneController : MonoBehaviour
 
             GuideUIController.SetMessage(SequenceConatiner._sequenceList[targetSeq + 1].scoreItems[0].Tip);
 
-            XAPIApplication.S.jettingLessonManager.SetHintStatementResultExtensions(SequenceConatiner._sequenceList[targetSeq + 1].scoreItems[0].Tip);
+            XAPIApplication.S.nowLessonManager.SetHintStatementResultExtensions(SequenceConatiner._sequenceList[targetSeq + 1].scoreItems[0].Tip);
 
         }
         else
         {
             GuideUIController.SetMessage(SequenceConatiner._sequenceList[targetSeq].scoreItems[targetStep + 1].Tip);
 
-            XAPIApplication.S.jettingLessonManager.SetHintStatementResultExtensions(SequenceConatiner._sequenceList[targetSeq].scoreItems[targetStep + 1].Tip);
+            XAPIApplication.S.nowLessonManager.SetHintStatementResultExtensions(SequenceConatiner._sequenceList[targetSeq].scoreItems[targetStep + 1].Tip);
         }
     }
 
@@ -414,6 +418,8 @@ public class EvaluationSceneController : MonoBehaviour
     // -------------------------------------------------------------------------------------
     public void RatingPanelOpen()
     {
+
+
         RatingPanel.MakeScoreBoard(SequenceConatiner);
         RatingPanel.OpenRatingPanel();
     }
@@ -460,7 +466,7 @@ public class EvaluationSceneController : MonoBehaviour
 
         //IMRLAB - 10/14
         //종료 문장 result list init
-        XAPIApplication.S.jettingLessonManager.InitResultStatement(SequenceConatiner);
+        //XAPIApplication.S.jettingLessonManager.InitResultStatement(SequenceConatiner);
     }
 
     private IEnumerator Timer_co(int seconds)
@@ -491,7 +497,11 @@ public class EvaluationSceneController : MonoBehaviour
         }
 
         if (isEvaluationStart)
+        {
+            XAPIApplication.S.SetTimeLimitSucces(false);
+            XAPIApplication.S.SendIMRXAPIStatement("Time");
             EvaluationEnd();
+        }
     }
 
     // -------------------------------------------------------------------------------------
