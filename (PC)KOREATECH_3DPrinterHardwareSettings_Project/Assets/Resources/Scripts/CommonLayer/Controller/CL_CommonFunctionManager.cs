@@ -259,9 +259,6 @@ public class CL_CommonFunctionManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         StopNarration();
-        //IMRLAB 10-07 씬 로드시 init 문장 전송
-        XAPIApplication.S.SendInitStatementByRowSceneName(sceneName);
-        Debug.Log(sceneName);
         sceneController.LoadScene(sceneName);
     }
 

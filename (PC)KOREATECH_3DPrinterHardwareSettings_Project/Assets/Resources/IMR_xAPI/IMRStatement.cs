@@ -39,12 +39,12 @@ namespace IMR
 
         public virtual void SetActor()
         {
-            var actor = XAPIApplication.S.ActorName;
+            var actor = XAPIApplication.current.ActorName;
             _actor.mbox = "mailto:" + actor.Replace(" ", "") + "@google.com";
             _actor.name = actor;
             _statement.actor = _actor;
 
-            UnityEngine.Debug.Log("SetActor "+ XAPIApplication.S.ActorName +"/"+ _statement.actor.mbox);
+            UnityEngine.Debug.Log("SetActor "+ XAPIApplication.current.ActorName + "/"+ _statement.actor.mbox);
         }
 
         public virtual void SetVerb(string verb)

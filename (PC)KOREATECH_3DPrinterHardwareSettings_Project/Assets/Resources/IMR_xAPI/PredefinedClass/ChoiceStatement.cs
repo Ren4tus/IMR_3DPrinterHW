@@ -10,7 +10,7 @@ public class ChoiceStatement : IMRStatement
         base.Init();
         SetActor();
         SetVerb("performed");
-        SetActivity("select");
+        SetActivity("selection");
         var extensions = new JObject();
         var content = new JObject();
         content["content"] = "3DPrinterHWSetting";
@@ -24,9 +24,20 @@ public class ChoiceStatement : IMRStatement
     }
     public void SetScore(double i)
     {
-        TinCan.Score score = new TinCan.Score();
-        score.raw = i;
-        _result.score = score;
+        _result.score.raw = i;
+
+    }
+    //추가 10-6 레슨 추가 함수
+    public void SetContextExtensionLesson(string lessonName)
+    {
+        var extensions = new JObject();
+        JProperty content = new JProperty("content", "3DPrinterHWSetting");
+        JProperty lesson = new JProperty("lesson", lessonName);
+
+        JObject tempProperty = new JObject(content, lesson);
+        extensions.Add("https://www.koreatech.ac.kr/extension/context", tempProperty);
+        SetContextExtensions(extensions);
+
 
     }
 }

@@ -17,30 +17,22 @@ public class InitalizeStatement : IMRStatement
         var content = new JObject();
         var version = new JObject();
         content["content"] = "3DPrinterHWSetting";
-        version["version"] = "temp";
+        //version["version"] = "temp";
         extensions.Add("https://www.koreatech.ac.kr/extension/context",content);
         SetContextExtensions(extensions);
     }
+
     //추가 10-6 레슨 추가 함수
     public void SetContextExtensionLesson(string lessonName)
     {
-        JObject extensionsJO = _context.extensions.ToJObject();
+        var extensions = new JObject();
+        JProperty content = new JProperty("content", "3DPrinterHWSetting");
+        JProperty lesson = new JProperty("lesson", lessonName);
 
-        if (extensionsJO.ContainsKey("lesson"))
-        {
-            UnityEngine.Debug.Log("statement already have lesson key");
-            return;
-        }
-        else
-        {
-            JObject lesson = new JObject();
-            lesson["lesson"] = lessonName;
-            extensionsJO.Add(lesson);
+        JObject tempProperty = new JObject(content, lesson);
+        extensions.Add("https://www.koreatech.ac.kr/extension/context",tempProperty);
+        SetContextExtensions(extensions);
 
-            _context.extensions = new TinCan.Extensions(extensionsJO);
-
-            UnityEngine.Debug.Log("SetContextExtensionLesson: save lesson "+ lessonName);
-        }
 
     }
 }

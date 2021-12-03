@@ -299,7 +299,10 @@ public class LoginNetworkManager : LoginNetworkSingleton<LoginNetworkManager>
 		ResVTCourseInfon resVtCourseInfo = JsonUtility.FromJson<ResVTCourseInfon>(data);
 
 
-		int req_count = resVtCourseInfo.body.total_count;
+		int req_count = 0;
+
+		if (resVtCourseInfo != null)
+			req_count = resVtCourseInfo.body.total_count;
 		for (int i = 0; i < req_count; i++)
 		{
 			koo_list.Add(new VRCourseKoo2(resVtCourseInfo.body.list[i].course_id, resVtCourseInfo.body.list[i].service_title, resVtCourseInfo.body.list[i].course_content_id));
@@ -318,7 +321,6 @@ public class LoginNetworkManager : LoginNetworkSingleton<LoginNetworkManager>
 
 	void ReqContentTrainingStatus()
 	{
-		Debug.Log("req test");
 		string url = StepURL.m_KoreatechURL + "/api/rest/getEnrollCourse";
 
 		//List<VRCourse> list = VRContents.m_VRContents;
@@ -339,12 +341,12 @@ public class LoginNetworkManager : LoginNetworkSingleton<LoginNetworkManager>
 			OnError("회원 정보가 정확하지 않습니다.", DoProgramQuit);
 			Debug.Log("ReqLoginUserInfoRegister : " + e);
 		}
-
+		
 		WWWForm wWWForm = new WWWForm();
 		wWWForm.AddField("Content-Type", "application/x-www-form-urlencoded");
 		wWWForm.AddField("student_user_id", resMemberInfo.body.idx);
 		wWWForm.AddField("course_id", courseID);
-
+		 
 		WWW www = new WWW(url, wWWForm);
 
 		Log("Request 수강신청 여부", url);
@@ -423,11 +425,16 @@ public class LoginNetworkManager : LoginNetworkSingleton<LoginNetworkManager>
 		m_IsCheckLoginState = true;
 		CheckLoginStatus();
 
+		Debug.Log("Login Success1");
+		 
 		//imrlab 10-07
 		//로그인 성공 시 xapi 전송
 		LoginSceneControl loginSceneControl = GameObject.Find("LoginSceneControl").GetComponent<LoginSceneControl>();
-		XAPIApplication.S.SendLoginStatement(loginSceneControl.m_Id.text);
-		
+		XAPIApplication.current.tempUserName = loginSceneControl.m_Id.text;
+		 
+
+
+
 
 		SceneManager.LoadScene(m_NextSceneLevel);
 	}
@@ -601,7 +608,7 @@ public class LoginNetworkManager : LoginNetworkSingleton<LoginNetworkManager>
 			done(www.text);
 			yield break;
 		}
-
+		
 		if (www.isDone)
 		{
 			if (done != null) { done(www.text); }

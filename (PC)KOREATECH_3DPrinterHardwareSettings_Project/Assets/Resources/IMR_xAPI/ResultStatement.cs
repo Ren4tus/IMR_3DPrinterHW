@@ -4,24 +4,24 @@ using IMR;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-public class TimeLimiteStatement : IMRStatement
+public class ResultStatement : IMRStatement
 {
-    public TimeLimiteStatement() => Init();
+    public ResultStatement() => Init();
     public sealed override void Init()
     {
         base.Init();
         SetActor();
-        SetVerb("performed");
-        SetActivity("3DPrinterHWSetting/limit-time");
-        SetResultSuccess(true);
+        SetVerb("terminated");
+        SetActivity("motor-system");
         var extensions = new JObject();
-        var content = new JObject {{"content", "3DPrinterHWSetting" } };
+        var content = new JObject();
+        content["content"] = "3DPrinterHWSetting";
         extensions.Add("https://www.koreatech.ac.kr/extension/context",content);
         SetContextExtensions(extensions);
     }
 
-    public void SetResultSuccess(bool b)
+    public void SetCompletion(bool b)
     {
-        _result.success = b;
+        _result.completion = b;
     }
 }

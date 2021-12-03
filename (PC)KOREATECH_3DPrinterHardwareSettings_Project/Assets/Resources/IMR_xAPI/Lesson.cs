@@ -7,11 +7,14 @@ public abstract class Lesson
 {
     public Dictionary<string, IMRStatement> statement_dictionary;
     protected int _hintCount = 1;
+    protected string lessonName;
+    protected double _score;
+    protected bool _completion;
     public abstract void Init();
     public abstract void ChangeNewStatement(string name);
-    public abstract void CloneResultCanvas(EvaluationCore.EvaluationContainer SequenceConatiner);
-    public abstract void SetLimitStatementResult(bool b);
-    public virtual void SetEvaluationItemElement(string _item, string _step) { }
+    public virtual void CloneResultCanvas(EvaluationCore.EvaluationContainer SequenceConatiner) { }
+    public virtual void SetLimitStatementResult(bool b) { }
+    public virtual void SetEvaluationItemElement(string _item, string _step, bool sucess) { }
     public virtual void SetHintStatementResultExtensions(string hintText) { }
 
     public void AddHintCount(int n)

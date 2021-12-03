@@ -7,6 +7,7 @@ using IMR;
 public class EndpointGUI : MonoBehaviour
 {
     public string temp = "plz input endpoint here";
+    public string temp2 = "34";
     public static EndpointGUI current;
 
     private void Awake()
@@ -27,9 +28,9 @@ public class EndpointGUI : MonoBehaviour
     {
         temp = GUI.TextField(new Rect(10, 10, 200, 20), temp, 100);
         //GUI.Label(new Rect(30, 90, 300, 200), XAPIApplication.current.EndPoint);
-        //GUI.Label(new Rect(30, 130, 300, 200), XAPIApplication.current.debug_msg);
+        GUI.Label(new Rect(30, 130, 300, 200), temp2);
         if (XAPIApplication.current.lrs_res != null)
-            GUI.Label(new Rect(30, 160, 300, 200), 
+            GUI.Label(new Rect(30, 160, 300, 200),
                 XAPIApplication.current.lrs_res.ToString());
         else
             GUI.Label(new Rect(30, 160, 300, 200), "NULL");

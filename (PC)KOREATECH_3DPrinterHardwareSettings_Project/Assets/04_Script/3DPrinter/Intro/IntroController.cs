@@ -33,7 +33,11 @@ public class IntroController : MonoBehaviour
     void Start()
     {
         // CameraController.pathSpeed = cameraSpeed;
+        
         StartCoroutine(LoadScene());
+        //EndpointGUI.current.temp2 = XAPIApplication.current.name;
+        XAPIApplication.current.Init();
+        XAPIApplication.current.SendLoginStatement(XAPIApplication.current.tempUserName);
     }
 
     public void MJPAni()

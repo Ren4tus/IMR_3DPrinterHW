@@ -35,4 +35,17 @@ public class HintStatement : IMRStatement
         Debug.Log("SetHintExtensions, hintText : "+ hintText);
         Debug.Log("resultExtension : " + tempJOBject);
     }
+    //추가 10-6 레슨 추가 함수
+    public void SetContextExtensionLesson(string lessonName)
+    {
+        var extensions = new JObject();
+        JProperty content = new JProperty("content", "3DPrinterHWSetting");
+        JProperty lesson = new JProperty("lesson", lessonName);
+
+        JObject tempProperty = new JObject(content, lesson);
+        extensions.Add("https://www.koreatech.ac.kr/extension/context", tempProperty);
+        SetContextExtensions(extensions);
+
+
+    }
 }

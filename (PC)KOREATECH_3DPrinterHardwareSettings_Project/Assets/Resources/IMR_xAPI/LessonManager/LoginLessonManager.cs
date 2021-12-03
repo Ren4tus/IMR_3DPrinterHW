@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
-using IMR;
-using Newtonsoft.Json.Linq;
-using TinCan;
+﻿using IMR;
+using System.Collections.Generic;
 using UnityEngine;
-//TODO: 나머지 요소들 채워넣기.
+
 public class LoginLessonManager : Lesson
 {
     private LoginStatement _login_statement;
 
     public LoginLessonManager() => Init();
-    public sealed override void Init()
+
+    public override sealed void Init()
     {
         Debug.Log("LoginLessonManager init");
 
@@ -17,19 +16,16 @@ public class LoginLessonManager : Lesson
 
         _login_statement = new LoginStatement();
 
-
         SetObject();
 
         statement_dictionary.Add("Init", _login_statement);
-
-
     }
 
     public void SetObject()
     {
-        _login_statement.SetActivity("3DPrinterHWSetting/login");
-
+        _login_statement.SetActivity("3DPrinterHWSetting/logged-in");
     }
+
     public override void ChangeNewStatement(string name)
     {
         switch (name)
@@ -40,21 +36,11 @@ public class LoginLessonManager : Lesson
                 SetObject();
 
                 break;
-
         }
     }
 
     public void SetContextExtensionUserID(string userID)
     {
         _login_statement._SetContextExtensionUserID(userID);
-
-    }
-    public override void SetLimitStatementResult(bool b)
-    {
-
-    }
-    public override void CloneResultCanvas(EvaluationCore.EvaluationContainer SequenceConatiner)
-    {
     }
 }
-
